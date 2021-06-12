@@ -55,3 +55,21 @@ INSTALLED_APPS = [
 12. change the domain:
 In the admin section, click on the domain and change the domain and display name,
 then click save
+
+13. adding authentication methods:
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+ACCOUNT_AUTHENTICATION_METHOD = 'username_email'
+ACCOUNT_EMAIL_REQUIRED = True
+ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
+ACCOUNT_SIGNUP_EMAIL_ENTER_TWICE = True
+ACCOUNT_USERNAME_MIN_LENGTH = 4
+LOGIN_URL = '/accounts/login/'
+LOGIN_REDIRECT_URL = '/'
+
+14. make your email primary and verified in the admin section
+
+15. in the ide press "python + tab" to autocomplete the python version
+
+16. to copy paste allauth templates:
+cp -r ../.pip-modules/lib/python3.8/site-packages/allauth/templates/*
