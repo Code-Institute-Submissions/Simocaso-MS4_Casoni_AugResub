@@ -73,3 +73,8 @@ LOGIN_REDIRECT_URL = '/'
 
 16. to copy paste allauth templates:
 cp -r ../.pip-modules/lib/python3.8/site-packages/allauth/templates/*
+
+17. create the app itself;
+python3 manage.py startapp home
+
+18. 
