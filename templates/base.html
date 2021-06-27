@@ -49,7 +49,7 @@
                 </button>
 
                 <div class="collapse navbar-collapse" id="navbarScroll">
-                    <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+                    <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll">
                         <li class="nav-item">
                         <a class="nav-link underline-transition" aria-current="page" href="/">Home</a>
                     </li>
@@ -60,25 +60,25 @@
                         <a class="nav-link underline-transition" href="{% url 'home' %}">Blogs</a>
                     </li>
                     {% if user.is_authenticated %}
-                    <li class="nav-item">
-                        <a class="nav-link underline-transition" href="{% url 'home' %}">Logout</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link underline-transition" href="{% url 'home' %}">My Profile</a>
-                    </li>
+                        <li class="nav-item">
+                            <a class="nav-link underline-transition" href="{% url 'home' %}">Logout</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link underline-transition" href="{% url 'home' %}">My Profile</a>
+                        </li>
                     {% else %}
-                    <li class="nav-item">
-                        <a class="nav-link underline-transition" href="{% url 'home' %}">Login</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link underline-transition" href="{% url 'home' %}">Signup</a>
-                    </li>
+                        <li class="nav-item">
+                            <a class="nav-link underline-transition" href="{% url 'home' %}">Login</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link underline-transition" href="{% url 'home' %}">Signup</a>
+                        </li>
                     {% endif %}
                     </ul>
 
                     <form class="d-flex"method="GET" action="{% url 'home' %}">
                         {% csrf_token %}
-                        <input class="form-control me-2" name="q" type="search" placeholder="Search" aria-label="Search">
+                        <input class="form-control me-2" name="q" type="text" placeholder="Search" aria-label="Search">
                         <button class="btn btn-outline-success" type="submit">Search</button>
                     </form>
 
