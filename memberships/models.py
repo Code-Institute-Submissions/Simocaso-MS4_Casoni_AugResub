@@ -1,5 +1,6 @@
 from django.db import models
 
+
 class membership(models.Model):
 
     class Meta:
