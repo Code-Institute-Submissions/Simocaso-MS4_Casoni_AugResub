@@ -1,0 +1,38 @@
+[
+ {
+    "model": "memberships.membership",
+    "pk": 1,
+    "fields": {
+      "sku": "MP-001",
+      "name": "Trial Plan",
+      "description": "Use this plan to get access to all our GYMs for a full day.",
+      "price": "5.00",
+      "image_url": null,
+      "image": ""
+    }
+  },
+  {
+    "model": "memberships.membership",
+    "pk": 2,
+    "fields": {
+      "sku": "MP-002",
+      "name": "Regular Plan",
+      "description": "Get access to your local GYM!, only 20€ per month!",
+      "price": "20.00",
+      "image_url": null,
+      "image": ""
+    }
+  },
+  {
+    "model": "memberships.membership",
+    "pk": 3,
+    "fields": {
+      "sku": "MP-003",
+      "name": "Roaming Plan",
+      "description": "Get access to all GYMs, with just 10€ more per month!",
+      "price": "30.00",
+      "image_url": null,
+      "image": ""
+    }
+  }
+]
