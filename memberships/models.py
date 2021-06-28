@@ -1,12 +1,11 @@
 from django.db import models
 
 
-class membership(models.Model):
+class Membership(models.Model):
 
     class Meta:
-        verbose_name_plural = 'memberships'
+        verbose_name_plural = 'Memberships'
 
-    sku = models.CharField(max_length=200, null=True, blank=True)
     name = models.CharField(max_length=200)
     description = models.CharField(max_length=2000)
     price = models.DecimalField(max_digits=6, decimal_places=2)
