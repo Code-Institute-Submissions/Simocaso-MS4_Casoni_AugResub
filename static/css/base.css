@@ -12,6 +12,9 @@ body{
 
 .main-section{
     margin-top: 56px;
+}
+
+.overlay{
     height: 100%;
     width: 100%;
     top: 0;
