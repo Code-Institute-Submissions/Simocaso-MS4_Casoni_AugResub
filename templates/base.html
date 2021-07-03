@@ -54,10 +54,7 @@
                         <a class="nav-link underline-transition" aria-current="page" href="/">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link underline-transition" href="{% url 'home' %}">Products</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link underline-transition" href="{% url 'home' %}">Blogs</a>
+                        <a class="nav-link underline-transition" href="{% url 'memberships' %}">Memberships</a>
                     </li>
                     {% if user.is_authenticated %}
                         <li class="nav-item">
@@ -93,23 +90,24 @@
                 </div>
             </div>
         </nav>
-
-        <hr class="navbar-separator">
-
     </header>
 
-    {% if messages %}
-        <div class="message-container"></div>
-    {% endif %}
+    <section class="main-section">
 
-    {% block page_header %}
-    {% endblock %}
+        {% if messages %}
+            <div class="message-container"></div>
+        {% endif %}
 
-    {% block content %}
-    {% endblock %}
+        {% block page_header %}
+        {% endblock %}
 
-    {% block postloadjs %}
-    {% endblock %}
+        {% block content %}
+        {% endblock %}
+
+        {% block postloadjs %}
+        {% endblock %}
+
+    </section>
 
 </body>
 </html>

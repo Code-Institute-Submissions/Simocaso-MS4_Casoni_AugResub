@@ -15,7 +15,7 @@
     "pk": 2,
     "fields": {
       "name": "Regular Plan",
-      "description": "Get access to your local GYM!, only 20€ per month!",
+      "description": "Get access to your local GYM! Only 20€ per month!",
       "price": "20.00",
       "image_url": null,
       "image": ""
