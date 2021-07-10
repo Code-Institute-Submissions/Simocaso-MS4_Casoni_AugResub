@@ -7,7 +7,6 @@ html {
 body{
     background: url('/media/gym-bg.jpg') no-repeat center center fixed;
     background-size: cover;
-    height: calc(100vh - 164px);
     color: rgb(255, 255, 255);
 }
 
@@ -18,10 +17,6 @@ body{
 
 .main-section{
     margin-top: 56px;
-}
-
-.memberships{
-    color: black;
 }
 
 .overlay{
@@ -37,3 +32,15 @@ body{
 .logo-font{
     color: white;
 }
+
+.memberships{
+    color: black;
+}
+
+/* home */
+
+.home-cont{
+    width: 60%;
+    height: 85vh;
+}
+

@@ -3,27 +3,17 @@
 {% load static %}
 
 {% block content %}
-    <div class="container-fluid text-center">
-        <h1 class="display-4 mt-5 pt-5">Motigym homepage <br> work in progress!</h1>
 
-        <div class="row">
-            <p>Choose your membership plan here</p>
-        </div>
-
-
-    <div class="container h-100">
+<div class="container home-cont">
     <div class="row h-100">
-        <div class="col-7 col-md-6 my-auto">
+        <div class="col-12 my-auto">
             <h1 class="display-4 logo-font text-black">
-                Discover our new memberships!
-            </h1>
-            <div class="my-5">
-                <h4>
-                    <a href="" class="btn btn-ls rounded-0 text-uppercase py-3">Start now</a>
-                </h4>
+                Discover our<br>Fitness Plans here!</h1>
+            <div class="my-4">
+                <a class="btn btn-lg btn-outline-light" href="{% url 'memberships' %}" role="button"> Start now</a>
             </div>
-        </div>    
+        </div>
     </div>
-    </div>
+</div>
 
 {% endblock %}
