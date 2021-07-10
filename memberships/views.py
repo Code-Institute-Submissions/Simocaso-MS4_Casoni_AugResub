@@ -14,3 +14,15 @@ def all_memberships(request):
     }
 
     return render(request, 'memberships/memberships.html', context)
+
+
+def memberships_detail(request, membership_id):
+    """ A view to show all the memberships plans"""
+
+    memberships = get_object_or_404(Membership, pk=membership_id)
+
+    context = {
+        'memberships': memberships,
+    }
+
+    return render(request, 'memberships/memberships_detail.html', context)

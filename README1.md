@@ -15,6 +15,8 @@ python3 manage.py runserver
 ^C 
 
 6. To start migrations:
+python3 manage.py makemigrations --dry-run
+python3 manage.py migrate --plan
 python3 manage.py migrate
 
 7. Create a super user in django:
@@ -77,4 +79,7 @@ cp -r ../.pip-modules/lib/python3.8/site-packages/allauth/templates/*
 17. create the app itself;
 python3 manage.py startapp home
 
-18. 
+18.  load data from fixtures
+python3 manage.py loaddata name
+
+19. 

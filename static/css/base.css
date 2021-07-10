@@ -41,6 +41,29 @@ body{
 
 .home-cont{
     width: 60%;
-    height: 85vh;
+    height: 90vh;
+}
+
+/* media responsiveness */
+
+@media only screen and (min-width: 992px) and (min-height: 480px){
+ .m-card{
+    height: 300px;
+ }
+
+ .card-body{
+    padding: 40px;
+ } 
+
+ .price{
+    font-size: 1.75rem;
+    padding-bottom: 25px;
+    text-align: center;
+ }
+
+ .m-cards{
+    padding-top: 70px;
+ }
+
 }
 
