@@ -1,0 +1,40 @@
+<!-- base index html, insert content here -->
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+    <div class="container-fluid">
+        <div class="row m-cards">
+            <div class="col text-center mt-3">
+                <h2 class="logo-font">Membership Plans</h2>
+                <hr class="w-75 mx-auto mb-1">
+                <h5 class="">Choose the membership plan that best suits your needs:</h5>
+            </div>
+        </div>
+        <div class="row memberships">
+            <div class="col-10 offset-1">
+                
+                <div class="row">
+                    {% for membership in memberships %}
+                        <div class="col-sm-12 m-card col-md-6 col-lg-4 pb-4">
+                            <div class="card h-100 border-0 mt-2">
+                                <div class="card-body pb-0">
+                                    <h2 class="mb-0 text-center">{{ membership.name }}</h2>
+                                    <hr>
+                                    <p class="">{{ membership.description }}</p>
+                                </div>
+                                <div class="card-footer bg-white pt-0 border-0 text-left">
+                                    <div class="row">
+                                        <div class="col">
+                                            <p class="lead price mb-0 font-weight-bold">${{ membership.price }}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %} 
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
