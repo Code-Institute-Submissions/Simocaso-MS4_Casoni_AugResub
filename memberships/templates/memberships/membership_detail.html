@@ -3,7 +3,17 @@
 {% load static %}
 
 {% block content %}
-    <div class="container-fluid">
+    <!-- <div class="container-fluid">
+        <div class="row">
+           <div class="card text-dark">
+                <h2 class="mb-0 text-center">{{ membership.name }}</h2><hr>
+                <p class="">{{ membership.description }}</p>
+                <p class="lead price mb-0 font-weight-bold">${{ membership.price }}</p>
+            </div>
+        </div>
+    </div> -->
+
+<div class="container-fluid">
         <div class="row m-cards">
             <div class="col text-center mt-3">
                 <h2 class="logo-font">Membership Plans</h2>
@@ -13,28 +23,29 @@
         </div>
         <div class="row memberships">
             <div class="col-10 offset-1">
-                
-                <div class="row">
-                    {% for membership in memberships %}
-                        <div class="col-sm-12 m-card col-md-6 col-lg-4 pb-4">
-                            <div class="card h-100 border-0 mt-2">
-                                <div class="card-body pb-0">
-                                    <h2 class="mb-0 text-center">{{ membership.name }}</h2>
-                                    <hr>
-                                    <p class="">{{ membership.description }}</p>
-                                </div>
-                                <div class="card-footer bg-white pt-0 border-0 text-left">
-                                    <div class="row">
-                                        <div class="col">
-                                            <p class="lead price mb-0 font-weight-bold">${{ membership.price }}</p>
-                                        </div>
+                <div class="card bg-dark">
+                    <div class="row card-body">
+                        
+                        <img class="col-sm-12 col-md-5 " src="Images/template.png" alt="sans"/>
+
+                            <div class="col-sm-12 col-md-7">
+                                <div class="card">
+
+                                    <div class="card-header">
+                                        €{{ membership.price }}/mo
+                                    </div>
+                                    
+                                    <div class="card-body">
+                                        <h5 class="card-title">{{ membership.name }}</h5>
+                                        <p class="card-text">{{ membership.description }}</p>
+                                        <a href="#" class="btn btn-primary">Subscribe now</a>
                                     </div>
                                 </div>
-                            </div>
-                        </div>
-                    {% endfor %} 
+                             </div>   
+                    </div>
                 </div>
+
             </div>
         </div>
-    </div>
+    </div>    
 {% endblock %}

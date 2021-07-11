@@ -16,13 +16,13 @@ def all_memberships(request):
     return render(request, 'memberships/memberships.html', context)
 
 
-def memberships_detail(request, membership_id):
+def membership_detail(request, membership_id):
     """ A view to show the membership detail"""
 
-    memberships = get_object_or_404(Membership, pk=membership_id)
+    membership = get_object_or_404(Membership, pk=membership_id)
 
     context = {
-        'memberships': memberships,
+        'membership': membership,
     }
 
-    return render(request, 'memberships/memberships_detail.html', context)
+    return render(request, 'memberships/membership_detail.html', context)
