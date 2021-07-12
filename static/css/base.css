@@ -44,6 +44,22 @@ body{
     height: 90vh;
 }
 
+/* membership detail page */
+
+.card-bg-detail{
+    background: url(/media/fit-couple.jpg) no-repeat;
+    background-size: cover;
+}
+
+.card-m-detail{
+    max-width: 100%;
+    height: auto;
+}
+
+.detail-price{
+    font-size: 1.25rem;
+}
+
 /* media responsiveness */
 
 @media only screen and (min-width: 992px) and (min-height: 480px){
@@ -67,3 +83,14 @@ body{
 
 }
 
+@media only screen and (min-width: 769px){
+ .card-m-detail{
+    padding-left: 0px;
+    padding-right: 0px;
+ }
+
+ .card-bg-detail{
+    padding-left: 12px;
+ }
+
+}
