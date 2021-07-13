@@ -3,42 +3,54 @@
 {% load static %}
 
 {% block content %}
+
 <div class="container-fluid">
+
+    <!-- memberships path -->
+    <div class="row sm-font text-center">
+        <div class="col-12 mt-1">
+            <a class=" text-reset" href="/">Home</a>
+            <span>/</span>
+            <a class=" text-reset" href="{% url 'memberships' %}">Memberships</a>
+            <span>/</span>
+            <span>{{ membership.name }}</span>            
+        </div>         
+    </div>
+
+    <!-- memberships header -->
     <div class="row m-cards">
-        <div class="col text-center mt-3">
+        <div class="col-10 offset-1 text-center mt-3">
             <h2 class="logo-font">Membership Plans</h2>
-            <hr class="w-75 mx-auto mb-1">
+            <hr class="w-100 mb-1">
             <h5 class="">Choose the membership plan that best suits your needs:</h5>
         </div>
     </div>
+
+    <!-- membership cards -->
     <div class="row memberships">
         <div class="col-10 offset-1 mb-4">
-            <div class="card bg-dark">
-                <div class="row memberships">
-                    <div class="col-10 offset-1">
-                        <div class="row">
-                            {% for membership in memberships %}
-                                <div class="col-sm-12 m-card col-md-6 col-lg-4 pb-4">
-                                    <a href="{% url 'membership_detail' membership.id %}" class="text-reset text-decoration-none">
-                                        <div class="card h-100 border-0 mt-2">
-                                            <div class="card-body pb-0">
-                                                <h2 class="mb-0 text-center">{{ membership.name }}</h2>
-                                                <hr>
-                                                <p class="">{{ membership.description }}</p>
-                                            </div>
-                                            <div class="card-footer bg-white pt-0 border-0 text-left">
-                                                <div class="row">
-                                                    <div class="col">
-                                                        <p class="lead price mb-0 font-weight-bold">€{{ membership.price }}</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </a>    
+            <div class="card bg-dark px-0">
+                <div class="row cards-margin">
+                {% for membership in memberships %}
+                    <div class="col-sm-12 m-card col-md-6 col-lg-4 pb-4">
+                        <a href="{% url 'membership_detail' membership.id %}" class="text-reset text-decoration-none">
+                            <div class="card h-100 border-0 mt-2">
+                                <div class="card-body pb-0">
+                                    <h2 class="mb-0 text-center">{{ membership.name }}</h2>
+                                    <hr>
+                                    <p class="">{{ membership.description }}</p>
                                 </div>
-                            {% endfor %} 
-                        </div>
+                                <div class="card-footer bg-white text-left">
+                                    <div class="row">
+                                        <div class="col">
+                                            <p class="price mb-0 lead">€{{ membership.price }}/mo</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>    
                     </div>
+                {% endfor %} 
                 </div>
             </div>
         </div>

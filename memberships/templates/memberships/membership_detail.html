@@ -3,51 +3,61 @@
 {% load static %}
 
 {% block content %}
-    <!-- <div class="container-fluid">
-        <div class="row">
-           <div class="card text-dark">
-                <h2 class="mb-0 text-center">{{ membership.name }}</h2><hr>
-                <p class="">{{ membership.description }}</p>
-                <p class="lead price mb-0 font-weight-bold">${{ membership.price }}</p>
-            </div>
-        </div>
-    </div> -->
 
 <div class="container-fluid">
-        <div class="row m-cards">
-            <div class="col text-center mt-3">
-                <h2 class="logo-font">Membership Plans</h2>
-                <hr class="w-75 mx-auto mb-1">
-                <h5 class="">Choose the membership plan that best suits your needs:</h5>
-            </div>
+
+    <!-- memberships path -->
+    <div class="row sm-font text-center">
+        <div class="col-12 mt-1">
+            <a class=" text-reset" href="/">Home</a>
+            <span>/</span>
+            <a class=" text-reset" href="{% url 'memberships' %}">Memberships</a>
+            <span>/</span>
+            <span>{{ membership.name }}</span>            
+        </div>         
+    </div>
+    
+    <!-- memberships header -->
+    <div class="row m-cards">
+        <div class="col-10 offset-1 text-center mt-3">
+            <h2 class="logo-font">Membership Plans</h2>
+            <hr class="w-100 mb-1">
+            <h5 class="">Submit now for the membership plan that best suits your needs:</h5>
         </div>
-        <div class="row memberships">
-            <div class="col-10 offset-1 mb-4">
-                <div class="card bg-dark">
-                    <div class="row card-body">
-                        
-                        <div class="col-sm-12 col-md-5 card-bg-detail">
+    </div>
+    
+    <!-- membership detail card -->
+    <div class="row">
+        <div class="col-10 offset-1 mb-4">
+            <div class="card main-detail-card">
+                <div class="row">
+
+                    <!-- membership detail image -->
+                    <div class="col-12 col-lg-6">
+                        <a href="{{ membership.image.url }}" target="_blank" class="mx-auto">  
+                            {% if membership.image %}
+                                <a href="{{ membership.image.url }}" target="_blank">
+                                    <img class="card-img-top img-fluid" src="{{ membership.image.url }}" alt="{{ membership.name }}">
+                                </a>
+                                {% else %}
+                                <a href="">
+                                    <img class="card-img-top img-fluid" src="{{MEDIA_URL }}noimage.png" alt="{{ membership.name }}">
+                                </a>
+                            {% endif %}
+                        </a>                    
+                    </div>
+
+                    <!-- membership details -->
+                    <div class="col-12 col-lg-6">
+                        <div class="card text-dark p-2">
+                            <p class="lg-font">{{ membership.name }}</p>
+                            <p class="lg-font font-mb" >€{{ membership.price }}/mo</p>  
+                            <p class="sm-font">{{ membership.description }}</p>
                         </div>
-
-                        <div class="col-sm-12 col-md-7 card-m-detail">
-                            <div class="card">
-
-                                <div class="card-header detail-price">
-                                    €{{ membership.price }}/mo
-                                </div>
-                                
-                                <div class="card-body">
-                                    <h5 class="card-title">{{ membership.name }}</h5>
-                                    <p class="card-text">{{ membership.description }}</p>
-                                    <a href="{% url 'memberships' %}" class="btn btn-secondary">Go Back</a>
-                                    <a href="#" class="btn btn-primary">Subscribe now</a>
-                                </div>
-                            </div>
-                        </div>   
                     </div>
                 </div>
-
             </div>
         </div>
-    </div>    
+    </div>
+</div>    
 {% endblock %}

@@ -33,10 +33,6 @@ body{
     color: white;
 }
 
-.memberships{
-    color: black;
-}
-
 /* home */
 
 .home-cont{
@@ -44,10 +40,29 @@ body{
     height: 90vh;
 }
 
+/* membership  */
+
+
+.memberships{
+    color: black;
+}
+
+.cards-margin{
+    margin-left: -5px;
+    margin-right: -5px;
+}
+
+
 /* membership detail page */
 
 .main-detail-card{
     background-color: #030305;
+}
+
+.font-mb{
+    font-style: italic;
+    font-weight: 600;
+    font-size: 1.25rem;
 }
 
 
@@ -62,12 +77,6 @@ body{
     padding: 40px;
  } 
 
- .price{
-    font-size: 1.75rem;
-    padding-bottom: 25px;
-    text-align: center;
- }
-
  .m-cards{
     padding-top: 70px;
  }
@@ -75,5 +84,9 @@ body{
 }
 
 @media only screen and (min-width: 768px){
+ .card-m-detail{
+    padding-left: 0px;
+    padding-right: 0px;
+ }
 
 }
