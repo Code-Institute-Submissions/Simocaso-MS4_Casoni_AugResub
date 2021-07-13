@@ -7,7 +7,7 @@
       "description": "Use this plan to get access to all our GYMs for a full day.",
       "price": "5.00",
       "image_url": null,
-      "image": ""
+      "image": "fit-couple.jpg"
     }
   },
   {
@@ -18,7 +18,7 @@
       "description": "Get access to your local GYM! Only 20€ per month!",
       "price": "20.00",
       "image_url": null,
-      "image": ""
+      "image": "fit-couple.jpg"
     }
   },
   {
@@ -29,7 +29,7 @@
       "description": "Get access to all GYMs, with just 10€ more per month!",
       "price": "30.00",
       "image_url": null,
-      "image": ""
+      "image": "fit-couple.jpg"
     }
   }
 ]
