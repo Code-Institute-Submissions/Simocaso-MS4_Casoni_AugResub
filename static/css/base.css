@@ -10,10 +10,14 @@ body{
     color: rgb(255, 255, 255);
 }
 
+/* navbar */
+
 .navbar{
     font-family: 'Bebas Neue', cursive;
     text-transform: uppercase;
 }
+
+/* main section */
 
 .main-section{
     margin-top: 56px;
