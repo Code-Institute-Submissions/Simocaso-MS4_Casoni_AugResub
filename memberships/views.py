@@ -11,13 +11,16 @@ def all_memberships(request):
     """ A view to show all the memberships plans"""
 
     memberships = Membership.objects.all()
+    query = None
+
     # Code used from Boutique Ado - CI Lesson
+   
     if request.GET:
         if 'q' in request.GET:
             query = request.GET['q']
             if not query:
                 messages.error(request, "No search request")
-                return redirect(reverse('Memberships'))
+                return redirect(reverse('memberships'))
 
             queries = Q(name__icontains=query) | Q(
                 description__icontains=query
@@ -26,6 +29,7 @@ def all_memberships(request):
 
     context = {
         'memberships': memberships,
+        'search_term': query,
     }
 
     return render(request, 'memberships/memberships.html', context)
