@@ -78,6 +78,7 @@ cp -r ../.pip-modules/lib/python3.8/site-packages/allauth/templates/*
 
 17. create the app itself;
 python3 manage.py startapp home
+add the app (new folder) to the motigym settings.py apps
 
 18.  load data from fixtures
 python3 manage.py loaddata name

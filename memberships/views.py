@@ -14,7 +14,7 @@ def all_memberships(request):
     query = None
 
     # Code used from Boutique Ado - CI Lesson
-   
+
     if request.GET:
         if 'q' in request.GET:
             query = request.GET['q']
