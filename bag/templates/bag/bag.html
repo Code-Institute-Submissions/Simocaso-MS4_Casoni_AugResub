@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+<div class="container-fluid">
+
+    <!-- memberships path -->
+    <div class="row sm-font text-center">
+        <div class="col-12 mt-1">
+            <a class=" text-reset" href="/">Home</a>
+            <span>/</span>
+            <a class=" text-reset" href="{% url 'view_bag' %}">Your bag</a>
+            <span>/</span>           
+        </div>         
+    </div>
+
+    <!-- memberships header -->
+    <div class="row m-cards">
+        <div class="col-10 offset-1 text-center mt-3">
+            <h2 class="logo-font">Your bag</h2>
+            <hr class="w-100 mb-1">
+            <h5 class="">Your bag</h5>
+        </div>
+    </div>
+
+    <!-- membership cards -->
+    <div class="row memberships">
+        <div class="col-10 offset-1 mb-4">
+            <div class="px-0">
+                <div class="row cards-margin">
+                
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
