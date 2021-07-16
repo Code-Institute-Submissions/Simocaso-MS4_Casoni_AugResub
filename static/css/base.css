@@ -12,7 +12,6 @@ body{
 
 /* navbar */
 
-
 /* main section */
 
 .main-section{
@@ -41,7 +40,6 @@ body{
 }
 
 /* membership  */
-
 
 .memberships{
     color: black;
@@ -92,6 +90,12 @@ transition: 0.4s;
     
  .search-box{
     width: 250px;
+ }
+
+ .link-exp:hover {
+    transform: scale(1.05);
+    transition: 0.2s;
+    color: white!important;
  }
 
 }
