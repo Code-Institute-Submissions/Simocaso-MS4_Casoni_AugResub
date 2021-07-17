@@ -1,6 +1,6 @@
 [
  {
-    "model": "",
+    "model": "products.product",
     "pk": 4,
     "fields": {
       "name": "Men's T-shirt",
@@ -11,7 +11,7 @@
     }
   },
   {
-    "model": "",
+    "model": "products.product",
     "pk": 5,
     "fields": {
       "name": "Women's T-shirt",
@@ -22,7 +22,7 @@
     }
   },
   {
-    "model": "",
+    "model": "products.product",
     "pk": 6,
     "fields": {
       "name": "Men's Hoodie",
@@ -33,7 +33,7 @@
     }
   },
   {
-    "model": "",
+    "model": "products.product",
     "pk": 7,
     "fields": {
       "name": "Women's Hoodie",
@@ -44,7 +44,7 @@
     }
   },
   {
-    "model": "",
+    "model": "products.product",
     "pk": 8,
     "fields": {
       "name": "Men's Shorts",
@@ -55,7 +55,7 @@
     }
   },
   {
-    "model": "",
+    "model": "products.product",
     "pk": 9,
     "fields": {
       "name": "Women's Shorts",
@@ -66,7 +66,7 @@
     }
   },
   {
-    "model": "",
+    "model": "products.product",
     "pk": 10,
     "fields": {
       "name": "Women's Leggins",
@@ -77,7 +77,7 @@
     }
   },
   {
-    "model": "",
+    "model": "products.product",
     "pk": 11,
     "fields": {
       "name": "Dumbbells Set",
@@ -88,7 +88,7 @@
     }
   },
   {
-    "model": "",
+    "model": "products.product",
     "pk": 12,
     "fields": {
       "name": "Gym Towel",
@@ -99,7 +99,7 @@
     }
   },
   {
-    "model": "",
+    "model": "products.product",
     "pk": 13,
     "fields": {
       "name": "Yoga Mat",
