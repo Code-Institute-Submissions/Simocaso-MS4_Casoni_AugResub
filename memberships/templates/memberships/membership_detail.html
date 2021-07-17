@@ -28,8 +28,8 @@
     
     <!-- membership detail card -->
     <div class="row">
-        <div class="col-10 offset-1 mb-4">
-            <div class="card main-detail-card">
+        <div class="col-10 offset-1 my-4">
+            <div class="card main-detail-card bg-light ">
                 <div class="row">
 
                     <!-- membership detail image -->
@@ -37,7 +37,7 @@
                         <a href="{{ membership.image.url }}" target="_blank" class="mx-auto">  
                             {% if membership.image %}
                                 <a href="{{ membership.image.url }}" target="_blank">
-                                    <img class="card-img-top img-fluid" src="{{ membership.image.url }}" alt="{{ membership.name }}">
+                                    <img class="card-img-top img-fluid rounded" src="{{ membership.image.url }}" alt="{{ membership.name }}">
                                 </a>
                                 {% else %}
                                 <a href="">
@@ -49,10 +49,13 @@
 
                     <!-- membership details -->
                     <div class="col-12 col-lg-6">
-                        <div class="card text-dark p-2">
-                            <p class="lg-font">{{ membership.name }}</p>
-                            <p class="lg-font font-mb" >€{{ membership.price }}/mo</p>  
+                        <div class="text-dark p-2">
+                            <h1 class="lg-font">{{ membership.name }}</h1>
+                            <hr class="w-100 my-1">
+                            <p class="lg-font font-mb my-2" >€{{ membership.price }}/mo</p>
+                            <hr class="w-100 my-1">
                             <p class="sm-font">{{ membership.description }}</p>
+                            <a href="{% url 'memberships' %}" class="btn btn-outline-dark">Back</a>
                         </div>
                     </div>
                 </div>
