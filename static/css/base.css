@@ -12,6 +12,10 @@ body{
 
 /* navbar */
 
+.bag-icon{
+    color: white;
+} 
+
 /* main section */
 
 .main-section{
@@ -30,6 +34,8 @@ body{
 
 .logo-font{
     color: white;
+    transform: scale(1.05);
+    transition: 0.4s;
 }
 
 /* home */
@@ -66,6 +72,21 @@ transition: 0.4s;
     font-style: italic;
     font-weight: 600;
     font-size: 1.25rem;
+}
+
+.font-subtitle{
+    font-family: Biotif,"Noto Sans","Noto Sans JP","Noto Sans KR",Helvetica;
+    font-weight: 400;
+    font-size: 1.27rem;
+    line-height: 1.75rem;
+    color: #1a1a1a;
+    text-transform: none;
+    color: #707070;
+}
+
+.div-img{
+    background-color: black;
+    height: 100%;
 }
 
 
