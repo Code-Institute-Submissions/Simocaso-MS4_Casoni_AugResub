@@ -1,7 +1,7 @@
 [
  {
     "model": "memberships.membership",
-    "pk": 1,
+    "pk": "M1",
     "fields": {
       "name": "Trial",
       "description": "Use this plan to get access to all our GYMs for a full day.",
@@ -12,7 +12,7 @@
   },
   {
     "model": "memberships.membership",
-    "pk": 2,
+    "pk": "M2",
     "fields": {
       "name": "Regular",
       "description": "Get access to your local GYM! Only 20€ per month!",
@@ -23,7 +23,7 @@
   },
   {
     "model": "memberships.membership",
-    "pk": 3,
+    "pk": "M3",
     "fields": {
       "name": "Roaming",
       "description": "Get access to all GYMs, with just 10€ more per month!",
