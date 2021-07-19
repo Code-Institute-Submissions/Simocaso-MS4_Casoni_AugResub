@@ -1,0 +1,70 @@
+<!-- base index html, insert content here -->
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+<div class="container-fluid">
+
+    <!-- memberships path -->
+    <div class="row sm-font text-center">
+        <div class="col-12 mt-1">
+            <a class=" text-reset" href="/">Home</a>
+            <span>/</span>
+            <a class=" text-reset" href="{% url 'products' %}">Products</a>
+            <span>/</span>
+            <span>{{ product.name }}</span>            
+        </div>         
+    </div>
+    
+    <!-- memberships header -->
+    <div class="row m-cards">
+        <div class="col-10 offset-1 text-center mt-3">
+            <h2 class="logo-font">product Plans</h2>
+            <hr class="w-100 mb-1">
+            <h5 class="">Submit now for the product plan that best suits your needs:</h5>
+        </div>
+    </div>
+    
+    <!-- membership detail card -->
+    <div class="row">
+        <div class="col-10 offset-1 my-3">
+            <div class="card main-detail-card bg-light ">
+                <div class="row">
+
+                    <!-- membership detail image -->
+                    <div class="col-12 col-md-5 col-lg-6">
+                        <div class="rounded div-img">
+                            <a href="{{ product.image.url }}" target="_blank" class="mx-auto">  
+                                {% if membership.image %}
+                                    <a href="{{ product.image.url }}" target="_blank">
+                                        <img class="card-img-top img-fluid rounded" src="{{ product.image.url }}" alt="{{ membership.name }}">
+                                    </a>
+                                    {% else %}
+                                    <a href="">
+                                        <img class="card-img-top img-fluid" src="{{MEDIA_URL }}noimage.png" alt="{{ product.name }}">
+                                    </a>
+                                {% endif %}
+                            </a>
+                        </div>              
+                    </div>
+
+                    <!-- membership details -->
+                    <div class="col-12 col-md-7 col-lg-6">
+                        <div class="text-dark p-2">
+                            <h1 class="lg-font">{{ product.name }}</h1>
+                            <p class="font-subtitle">{{ product.name }} fitness plan</p>
+                            <hr class="w-100 my-1">
+                            <p class="my-2"><span class="lg-font font-mb">€{{ product.price }}</span>/month</p>
+                            <hr class="w-100 my-1">
+                            <p class="sm-font">{{ product.description }}</p>
+                            <p class="sm-font">{{ membership.description }}</p>
+                            <a href="{% url 'products' %}" class="btn btn-outline-dark">Back</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>    
+{% endblock %}
