@@ -3,43 +3,55 @@
 
 {% block content %}
 
-<div class="container-fluid">
+<div class="container-fluid row  g-0">
+    <div class="rounded mt-4 prd-main-div col-10 offset-1 bg-light">
 
-    <!-- memberships path -->
-    <div class="row sm-font text-center">
-        <div class="col-12 mt-1">
-            <a class=" text-reset" href="/">Home</a>
-            <span>/</span>
-            <a class=" text-reset" href="{% url 'products' %}">products</a>
-            <span>/</span>
-            <span>{{ product.name }}</span>            
-        </div>         
-    </div>
-
-    <!-- memberships header -->
-    <div class="row m-cards">
-        <div class="col-10 offset-1 text-center mt-3">
-            <h2 class="logo-font">product Plans</h2>
-            <hr class="w-100 mb-1">
-            <h5 class="">Choose the product plan that best suits your needs:</h5>
+        <!-- products path -->
+        <div class="row sm-font text-center">
+            <div class="col-12 mt-1">
+                <a class=" text-reset" href="/">Home</a>
+                <span>/</span>
+                <a class=" text-reset" href="{% url 'products' %}">products</a>
+                <span>/</span>
+                <span>{{ product.name }}</span>            
+            </div>         
         </div>
-    </div>
 
-    <!-- membership cards -->
-    <div class="row memberships">
-        <div class="col-10 offset-1 mb-4">
-            <div class="px-0">
-                <div class="row cards-margin">
+        <!-- products header -->
+        <div class="row m-cards">
+            <div class="col-10 offset-1 text-center mt-3">
+                <h2 class="logo-font">Shop</h2>
+                <hr class="w-100 mb-1">
+                <p class="text-start">{{products|length}} Products</p>
+            </div>
+        </div>
+
+        <!-- products cards -->
+        <div class="row memberships">
+            <div class="col-lg-10 offset-lg-1 col-12 mb-4">
+                <div class="row">
                 {% for product in products %}
-                    <div class="col-sm-12 m-card md-expansion shadow col-md-6 col-lg-4 pb-4">
+                    <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3 my-3">
                         <a href="{% url 'product_detail' product.id %}" class="text-reset text-decoration-none">
-                            <div class="card h-100 border-0 mt-2">
-                                <div class="card-body pb-0">
-                                    <h2 class="mb-0 text-center">{{ product.name }}</h2>
-                                    <hr>
-                                    <p class="">{{ product.description }}</p>
+                            <div class=" mt-2">
+
+                                <div class="rounded bg-product-img"> 
+                                    {% if product.image %}
+                                        <a href="{{ product.image.url }}" target="_blank">
+                                            <img class="card-img-top img-fluid rounded" src="{{ product.image.url }}" alt="{{ membership.name }}">
+                                        </a>
+                                        {% else %}
+                                        <a href="">
+                                            <img class="card-img-top img-fluid" src="{{MEDIA_URL }}noimage.png" alt="{{ product.name }}">
+                                        </a>
+                                    {% endif %}
                                 </div>
-                                <div class="card-footer bg-white text-left">
+
+                                <div class="pb-0">
+                                    <h2 class="mb-0 text-center">{{ product.name }}</h2>
+                                </div>
+                                
+                                <div class="bg-white text-left">
                                     <div class="row">
                                         <div class="col">
                                             <p class="price mb-0 lead">€{{ product.price }}/mo</p>
@@ -49,6 +61,7 @@
                             </div>
                         </a>    
                     </div>
+                    <hr>
                 {% endfor %} 
                 </div>
             </div>

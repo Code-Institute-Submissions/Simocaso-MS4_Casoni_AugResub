@@ -1,4 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+* {
+    position: relative;
+    box-sizing: border-box;
+}
 
 html {
     height: 100%;
@@ -110,6 +113,16 @@ transition: 0.4s;
     height: 100%;
 }
 
+/* product */
+
+.prd-main-div, .prd-main-div h2{
+    color: black;
+}
+
+.bg-product-img{
+    background-color: rgb(255, 255, 255);
+    height: 100%;
+}
 
 /* media responsiveness */
 
