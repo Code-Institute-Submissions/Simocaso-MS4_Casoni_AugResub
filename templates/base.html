@@ -51,13 +51,13 @@
                 <div class="collapse navbar-collapse" id="navbarScroll">
                     <ul class="navbar-nav me-lg-auto my-2 my-lg-0 navbar-nav-scroll g-0 ul-nav">
                         <li class="nav-item">
-                        <a class="nav-link link-exp underline-transition" aria-current="page" href="/">Home</a>
-                        </li>
-                        <li class="nav-item">
                             <a class="nav-link link-exp underline-transition" href="{% url 'memberships' %}">Memberships</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link link-exp underline-transition" href="{% url 'home' %}">Shop</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link link-exp underline-transition" aria-current="page" href="/">Info</a>
                         </li>
                         {% if user.is_authenticated %}
                             <li class="nav-item user-link-top">
@@ -84,9 +84,7 @@
                     <div class="nav-item cart">
                         <a class="nav-link" href="{% url 'view_bag' %}">
                             <i class="fas fa-shopping-cart bag-icon lg-font"></i>
-                            
                             <span class="cart-icon-quantity"></span>
-                            
                         </a>
                     </div>
                 </div>
