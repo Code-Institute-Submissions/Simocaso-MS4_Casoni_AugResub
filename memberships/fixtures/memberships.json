@@ -1,10 +1,10 @@
 [
  {
     "model": "memberships.membership",
-    "pk": "M1",
+    "pk": 1,
     "fields": {
       "name": "Trial",
-      "description": "Use this plan to get access to all our GYMs for a full day.",
+      "description": "Use this plan to get a full day access to all our GYMs.",
       "price": "5.00",
       "image_url": null,
       "image": "fit-couple.jpg"
@@ -12,10 +12,10 @@
   },
   {
     "model": "memberships.membership",
-    "pk": "M2",
+    "pk": 2,
     "fields": {
       "name": "Regular",
-      "description": "Get access to your local GYM! Only 20€ per month!",
+      "description": "Get monthly access to your local GYM for only 20€!",
       "price": "20.00",
       "image_url": null,
       "image": "fit-couple.jpg"
@@ -23,10 +23,10 @@
   },
   {
     "model": "memberships.membership",
-    "pk": "M3",
+    "pk": 3,
     "fields": {
       "name": "Roaming",
-      "description": "Get access to all GYMs, with just 10€ more per month!",
+      "description": "Add just 10€ and get access to all our GYMs!",
       "price": "30.00",
       "image_url": null,
       "image": "fit-couple.jpg"
