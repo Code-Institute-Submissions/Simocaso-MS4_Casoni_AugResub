@@ -119,9 +119,25 @@ transition: 0.4s;
     color: black;
 }
 
+.bg-product{
+    background-color: white;
+    background: padding-box;
+}
+
 .bg-product-img{
     background-color: rgb(255, 255, 255);
     height: 100%;
+    overflow: hidden; 
+}
+
+.prd-img-zoom{
+    display: block;
+    transition: transform .4s;
+}
+
+.bg-product-img:hover img {
+    transform: scale(1.3);
+    transform-origin: 50% 50%;
 }
 
 /* media responsiveness */

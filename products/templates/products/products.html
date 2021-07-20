@@ -18,8 +18,8 @@
         </div>
 
         <!-- products header -->
-        <div class="row m-cards">
-            <div class="col-10 offset-1 text-center mt-3">
+        <div class="row">
+            <div class="col-10 offset-1 text-center mt-2">
                 <h2 class="logo-font">Shop</h2>
                 <hr class="w-100 mb-1">
                 <p class="text-start">{{products|length}} Products</p>
@@ -27,41 +27,33 @@
         </div>
 
         <!-- products cards -->
-        <div class="row memberships">
+        <div class="row">
             <div class="col-lg-10 offset-lg-1 col-12 mb-4">
-                <div class="row">
+                <div class="row g-0">
                 {% for product in products %}
-                    <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3 my-3">
+                    <div class="col-sm-12 col-md-4 col-xl-3 my-3 rounded bg-product px-1">
                         <a href="{% url 'product_detail' product.id %}" class="text-reset text-decoration-none">
                             <div class=" mt-2">
 
-                                <div class="rounded bg-product-img"> 
-                                    {% if product.image %}
-                                        <a href="{{ product.image.url }}" target="_blank">
-                                            <img class="card-img-top img-fluid rounded" src="{{ product.image.url }}" alt="{{ membership.name }}">
-                                        </a>
-                                        {% else %}
-                                        <a href="">
-                                            <img class="card-img-top img-fluid" src="{{MEDIA_URL }}noimage.png" alt="{{ product.name }}">
-                                        </a>
-                                    {% endif %}
+                                <div class="rounded bg-product-img "> 
+                                    <img class="img-fluid rounded prd-img-zoom" src="{{ product.image.url }}" alt="{{ membership.name }}">
                                 </div>
 
-                                <div class="pb-0">
-                                    <h2 class="mb-0 text-center">{{ product.name }}</h2>
+                                <div class="pb-0 bg-white text-left">
+                                    <h4 class="mb-0 text-start">{{ product.name }}</h4>
                                 </div>
                                 
                                 <div class="bg-white text-left">
                                     <div class="row">
                                         <div class="col">
-                                            <p class="price mb-0 lead">€{{ product.price }}/mo</p>
+                                            <p>€{{ product.price }}</p>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </a>    
                     </div>
-                    <hr>
+                   
                 {% endfor %} 
                 </div>
             </div>
