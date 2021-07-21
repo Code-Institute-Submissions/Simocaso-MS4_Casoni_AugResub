@@ -64,9 +64,15 @@ body{
 
 /* home */
 
-.home-cont{
-    width: 60%;
+.total-vh{
+    /* width: 60%; */
     height: 90vh;
+}
+
+.text-carousel{
+  margin: auto;
+  width: 60%;
+  padding-top: 32vh;
 }
 
 /* membership  */
@@ -156,6 +162,26 @@ transition: 0.4s;
  }
 
 }
+
+/* max-min height media */
+
+@media only screen and (max-height: 480px) {
+
+ .text-carousel{
+   padding-top: 20vh;
+ }
+
+}
+
+@media only screen and (max-height: 375px) {
+
+ .text-carousel{
+   padding-top: 12vh;
+ }
+
+}
+
+/* max-min width media */
 
 @media only screen and (min-width: 992px) {
     

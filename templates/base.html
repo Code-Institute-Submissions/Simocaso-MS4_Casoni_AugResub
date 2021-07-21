@@ -76,9 +76,9 @@
                         {% endif %}
                     </ul>
 
-                    <form class="d-flex"method="GET" action="{% url 'memberships' %}">
-                        <input class="form-control me-2 search-box" name="q" type="text" placeholder="Try Trial, Regular, Roaming.." aria-label="Search">
-                        <button class="btn btn-outline-success" type="submit">Search</button>
+                    <form class="d-flex"method="GET" minlength="1" action="{% url 'products' %}">
+                        <input class="form-control me-2 search-box" name="q" type="text" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-info" type="submit">Search</button>
                     </form>
 
                     <div class="nav-item cart">

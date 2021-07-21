@@ -4,12 +4,40 @@
 
 {% block content %}
 
-<div class="container home-cont">
-    <div class="row h-100">
-        <div class="col-12 my-auto">
-            <h1 class="display-4 text-black">Discover our<br>Fitness Plans here!</h1><a class="btn btn-lg btn-outline-light my-4" href="{% url 'memberships' %}" role="button"> Start now</a>            
+<div class="container">
+
+  <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
+    <!-- carousel buttons -->
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+
+      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    </div>
+
+    <div class="carousel-inner">
+        <!-- first -->
+        <div class="carousel-item active">
+            <div class="text-carousel total-vh">
+                <h1 class="display-4 text-black">Discover our<br>Fitness Plans here! Or..</h1><a class="btn btn-lg btn-outline-light my-4" href="{% url 'memberships' %}" role="button"> Start now</a> 
+            </div>
+        </div>
+        <!-- second -->
+        <div class="carousel-item">
+            <div class="text-carousel total-vh">
+                <h1 class="display-4 text-black">..Start shopping<br>with us!</h1><a class="btn btn-lg btn-outline-light my-4" href="{% url 'products' %}" role="button"> Shop now</a>
+            </div>
         </div>
     </div>
-</div>
 
+    <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+    
+  </div>
+</div>
 {% endblock %}
