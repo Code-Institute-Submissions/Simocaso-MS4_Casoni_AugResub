@@ -4,7 +4,7 @@
     "pk": 4,
     "fields": {
       "name": "Men's T-shirt",
-      "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+      "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
       "price": "12.99",
       "image_url": null,
       "image": "shirt-men.jpg"
@@ -15,7 +15,7 @@
     "pk": 5,
     "fields": {
       "name": "Women's T-shirt",
-      "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+      "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
       "price": "19.99",
       "image_url": null,
       "image": "shirt-women.jpg"
@@ -26,7 +26,7 @@
     "pk": 6,
     "fields": {
       "name": "Men's Hoodie",
-      "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+      "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
       "price": "45.99",
       "image_url": null,
       "image": "hoodie-men.jpg"
@@ -37,7 +37,7 @@
     "pk": 7,
     "fields": {
       "name": "Women's Hoodie",
-      "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+      "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
       "price": "64.99",
       "image_url": null,
       "image": "hoodie-women.jpg"
@@ -48,7 +48,7 @@
     "pk": 8,
     "fields": {
       "name": "Men's Shorts",
-      "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+      "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
       "price": "25.99",
       "image_url": null,
       "image": "shorts-men.jpg"
@@ -59,7 +59,7 @@
     "pk": 9,
     "fields": {
       "name": "Women's Shorts",
-      "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+      "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
       "price": "14.99",
       "image_url": null,
       "image": "shorts-women.jpg"
@@ -70,7 +70,7 @@
     "pk": 10,
     "fields": {
       "name": "Women's Leggins",
-      "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+      "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
       "price": "19.99",
       "image_url": null,
       "image": "leggings-women.jpg"
@@ -81,7 +81,7 @@
     "pk": 11,
     "fields": {
       "name": "Dumbbells Set",
-      "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+      "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
       "price": "45.99",
       "image_url": null,
       "image": "dumbbells.jpg"
@@ -92,7 +92,7 @@
     "pk": 12,
     "fields": {
       "name": "Gym Towel",
-      "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+      "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
       "price": "9.99",
       "image_url": null,
       "image": "gym-towel.jpg"
@@ -103,7 +103,7 @@
     "pk": 13,
     "fields": {
       "name": "Yoga Mat",
-      "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+      "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
       "price": "9.99",
       "image_url": null,
       "image": "yoga-mat.jpg"
