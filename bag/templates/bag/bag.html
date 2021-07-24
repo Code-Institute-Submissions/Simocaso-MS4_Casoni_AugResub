@@ -5,31 +5,48 @@
 
 <div class="container-fluid">
 
-    <!-- memberships path -->
+    <!-- bag path -->
     <div class="row sm-font text-center">
         <div class="col-12 mt-1">
-            <a class=" text-reset" href="/">Home</a>
+            <a class=" text-reset" href="{% url 'products' %">Shop</a>
             <span>/</span>
-            <a class=" text-reset" href="{% url 'view_bag' %}">Your bag</a>
-            <span>/</span>           
+            <a class=" text-reset" href="{% url 'view_bag' %}">Your bag</a>    
         </div>         
     </div>
+</div>
 
-    <!-- memberships header -->
-    <div class="row m-cards">
-        <div class="col-10 offset-1 text-center mt-3">
-            <h2 class="logo-font">Your bag</h2>
-            <hr class="w-100 mb-1">
-            <h5 class="">Your bag</h5>
+<!-- bag header -->
+
+<div class="container-fluid row">
+    <div class="rounded mt-4 bag-main-div col-10 offset-1 bg-light">
+
+        <!-- products header -->
+        <div class="row">
+            <div class="col-10 offset-1 text-start mt-2">
+                <h2>Your Shopping Bag:</h2>
+                <hr class="w-100 mb-1">
+            </div>
         </div>
-    </div>
 
-    <!-- membership cards -->
-    <div class="row memberships">
-        <div class="col-10 offset-1 mb-4">
-            <div class="px-0">
-                <div class="row cards-margin">
-                
+        <!-- products cards -->
+        <div class="row">
+            <div class="col-lg-10 offset-lg-1 col-12 mb-4">
+                <div class="row">
+                    {% if bag_products %}
+                    <div class="table-responsive rounded">
+
+                    </div>
+                    {% else %}
+                    <div>
+                        <p class="font-subtitle">Your shopping bag is empty</p>
+                        <a href="{% url 'products' %}" class="btn btn-outline-info">
+                            <span>
+                                <i class="fas fa-chevron-left"></i>
+                            </span>
+                            <span>Keep shopping</span>
+                        </a>
+                    </div>
+                    {% endif %}
                 </div>
             </div>
         </div>

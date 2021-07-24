@@ -119,7 +119,7 @@ transition: 0.4s;
     height: 100%;
 }
 
-/* product */
+/* products */
 
 .prd-main-div, .prd-main-div h2{
     color: black;
@@ -145,6 +145,13 @@ transition: 0.4s;
     transform: scale(1.3);
     transform-origin: 50% 50%;
 }
+
+/* bag */
+
+.bag-main-div, .bag-main-div h2{
+    color: black;
+}
+
 
 /* media responsiveness */
 

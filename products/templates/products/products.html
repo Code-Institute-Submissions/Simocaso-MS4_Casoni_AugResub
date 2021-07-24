@@ -3,7 +3,7 @@
 
 {% block content %}
 
-<div class="container-fluid row  g-0">
+<div class="container-fluid row g-0">
     <div class="rounded mt-4 prd-main-div col-10 offset-1 bg-light">
 
         <!-- products path -->
@@ -11,9 +11,7 @@
             <div class="col-12 mt-1">
                 <a class=" text-reset" href="/">Home</a>
                 <span>/</span>
-                <a class=" text-reset" href="{% url 'products' %}">products</a>
-                <span>/</span>
-                <span>{{ product.name }}</span>            
+                <a class=" text-reset" href="{% url 'products' %}">products</a>       
             </div>         
         </div>
 
