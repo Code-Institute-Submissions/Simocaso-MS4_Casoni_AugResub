@@ -50,8 +50,9 @@
                             <p class="sm-font">{{ membership.description }}</p>
 
                             <!-- add to bag form -->
-                            <form class="form">
+                            <form class="form" action="{% url 'add_item' product.id %}" method="POST">
                                 {% csrf_token %}
+
                                 <div class="form-row">
                                     <div class="col-12">
                                         <p class="mt-3"><strong>Quantity:</strong></p>
@@ -61,6 +62,7 @@
                                             </div>
                                         </div>
                                     </div>
+                                    
                                     <div class="col-12">
                                         <a href="{% url 'products' %}" class="btn mt-3">
                                             <span>
