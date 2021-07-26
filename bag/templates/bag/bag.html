@@ -34,12 +34,12 @@
                 <div class="row">
                     {% if bag_products %}
                     <div class="table-responsive rounded">
-
+                        {{ bag_products }}
                     </div>
                     {% else %}
                     <div>
                         <p class="font-subtitle">Your shopping bag is empty</p>
-                        <a href="{% url 'products' %}" class="btn btn-outline-info">
+                        <a href="{% url 'bag' %}" class="btn btn-outline-info">
                             <span>
                                 <i class="fas fa-chevron-left"></i>
                             </span>

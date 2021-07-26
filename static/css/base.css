@@ -15,9 +15,18 @@ body{
 
 /* navbar */
 
+.bag{
+    display: contents;
+}
+
 .bag-icon{
     color: white;
+    display: -webkit-box;
 } 
+
+.fa-shopping-cart{
+    padding-right: 5px!important;
+}
 
 .user-link-top{
     background-color: #393e44;
@@ -65,7 +74,6 @@ body{
 /* home */
 
 .total-vh{
-    /* width: 60%; */
     height: 90vh;
 }
 

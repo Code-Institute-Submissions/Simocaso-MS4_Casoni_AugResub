@@ -81,12 +81,19 @@
                         <button class="btn btn-outline-info" type="submit">Search</button>
                     </form>
 
-                    <div class="nav-item cart">
-                        <a class="nav-link" href="{% url 'view_bag' %}">
-                            <i class="fas fa-shopping-cart bag-icon lg-font"></i>
-                            <span class="cart-icon-quantity"></span>
+                    <div class="nav-item bag">
+                        <a class="nav-link bag-icon link-exp text-reset" href="{% url 'view_bag' %}">
+                            <i class="fas fa-shopping-cart lg-font">:</i>
+                            <p class="my-0">
+                                {% if total > 0 %}
+                                    €{{ total|floatformat:2 }}
+                                {% else %}
+                                    €0.00
+                                {% endif %}
+                            </p>
                         </a>
                     </div>
+
                 </div>
             </div>
         </nav>
