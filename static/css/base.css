@@ -49,6 +49,12 @@ body{
     padding-left:0.75rem;
 }
 
+/* bag */
+
+.small-prd-img{
+    width: 80%;
+}
+
 /* main section */
 
 .main-section{

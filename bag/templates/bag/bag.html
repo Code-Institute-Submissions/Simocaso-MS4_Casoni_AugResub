@@ -28,6 +28,7 @@
             </div>
         </div>
             <!-- USE THIS TABLE AS TEMPLATEEEEEE -->
+        {% if bag_products %}
         <div class="table-responsive">
             <table class="table align-middle table-hover">
                 <thead>
@@ -39,99 +40,63 @@
                         <th scope="col">Subtotal</th>
                     </tr>
                 </thead>
+                {% for product in bag_products %}
                 <tbody>
                     <tr>
-                        <td class="align-top">This cell is aligned to the top.</td>
-                        <td class="align-top">This cell is aligned to the top.</td>
-                        <td class="align-top">This cell is aligned to the top.</td>
-                        <td class="align-top">This cell is aligned to the top.</td>
+                        <td class="align-top w-25">
+                            <img class="img-fluid small-prd-img rounded" src="{{ product.product.image.url }}">
+                        </td>
+                        <td class="align-top">
+                            <p class="mt-0">{{ product.product.name }}</p>
+                            <p class="mt-0 small text-muted">Product code:{{ product.product.pk }}</p>
+                        </td>
+                        <td class="align-top">
+                            <p class="py-2">€{{ product.product.price }}</p>
+                        </td>
+                        <td class="align-top">
+                            <p class="py-2">{{ product.quantity }}</p>
+                        </td>
+                        <td class="align-top">
+                            <p class="py-2 text-muted">{% widthratio product.product.price 1 product.quantity %}</p> 
+                        </td>
                     </tr>
                 </tbody>
-                <tbody>
-                    <tr>
-                        <td class="align-top">This cell is aligned to the top.</td>
-                        <td class="align-top">This cell is aligned to the top.</td>
-                        <td class="align-top">This cell is aligned to the top.</td>
-                        <td class="align-top">This cell is aligned to the top.</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-
-        <!-- products cards -->
-        <div class="row">
-            <div class="col">
-                {% if bag_products %}
-                    <div class="table-responsive rounded">
-                        <table class="table-hover table-sm">
-                            <thead>
-                                <tr>
-                                    <th scope="col">Product Info</th>
-                                    <th scope="col"></th>
-                                    <th scope="col">Price</th>
-                                    <th scope="col">Quantity</th>
-                                    <th scope="col">Subtotal</th>
-                                </tr>
-                            </thead>
-
-                            {% for product in bag_products %}
-                                <tr class="align-top">
-                                    <td class="p-2 w-25">
-                                        <img class="img-fluid small rounded" src="{{ product.product.image.url }}">
-                                    </td>
-                                    <td class="py-2">
-                                        <p class="mt-0">{{ product.product.name }}</p>
-                                        <p class="mt-0 small text-muted">Product code:{{ product.product.pk }}</p>
-                                    </td>
-                                    <td>
-                                        <p class="py-2">€{{ product.product.price }}</p>
-                                    </td>
-                                    <td>
-                                        <p class="py-2">{{ product.quantity }}</p> 
-                                    </td>
-                                    <td>
-                                        <p class="py-2">{{ product.product.price }}</p> 
-                                    </td>
-                                </tr>
-                            {% endfor %}
-                            <tr>
-                                <td colspan="5" class="pt-5 text-end">
-                                    <h6><strong>Total: ${{ total|floatformat:2 }}</strong></h6>
-                                    <h6>Free Delivery on all our products!</h6>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td colspan="5" class="text-end">
-                                    <a href="{% url 'products' %}" class="btn btn-outline-info">
-                                        <span>
-                                            <i class="fas fa-chevron-left"></i>
-                                        </span>
-                                        <span>Keep shopping</span>
-                                    </a>
-                                    <a href="" class="btn btn-black rounded-0 btn-lg">
-                                        <span class="icon">
-                                            <i class="fas fa-lock"></i>
-                                        </span>
-                                        <span class="text-uppercase">Checkout Securely Now</span>
-                                    </a>
-                                </td>
-                            </tr>
-                        </table>
-                    </div>
-                    {% else %}
-                    <div>
-                        <p class="font-subtitle">Your shopping bag is empty</p>
+                {% endfor %} 
+                <tr>
+                    <td colspan="5" class="pt-5 text-end">
+                        <h6><strong>Total: ${{ total|floatformat:2 }}</strong></h6>
+                        <h6>Free Delivery on all our products!</h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="5" class="text-end">
                         <a href="{% url 'products' %}" class="btn btn-outline-info">
                             <span>
                                 <i class="fas fa-chevron-left"></i>
                             </span>
                             <span>Keep shopping</span>
                         </a>
-                    </div>
-                    {% endif %}
-                </div>
-            </div>
+                        <a href="" class="btn btn-black">
+                            <span class="icon">
+                                <i class="fas fa-lock"></i>
+                            </span>
+                            <span class="text-uppercase">Checkout Securely Now</span>
+                        </a>
+                    </td>
+                </tr>
+            </table>
         </div>
+        {% else %}
+        <div>
+            <p class="font-subtitle">Your shopping bag is empty</p>
+            <a href="{% url 'products' %}" class="btn btn-outline-info">
+                <span>
+                    <i class="fas fa-chevron-left"></i>
+                </span>
+                <span>Keep shopping</span>
+            </a>
+        </div>
+        {% endif %}
     </div>
 </div>
 {% endblock %}
