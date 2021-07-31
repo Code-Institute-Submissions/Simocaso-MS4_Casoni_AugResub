@@ -74,20 +74,22 @@
                                     <div class="form-group w-100">
                                         <div class="input-group">
                                             <!-- quantity number -->
-                                            <input class="form-control" type="number" 
-                                            name="quantity" value="1" min="1" max="99"
-                                            data-product_id="{{ product.id }}" id="id_qty_{{ product.id }}">
+                                            <input class="form-control qty_input" type="number"
+                                            name="quantity" value="1" min="1" max="99" data-item_id="{{ product.id }}"
+                                            id="id_qty_{{ product.id }}">
                                             <!-- minus button -->
-                                            <div class="input-group-append">
-                                                <button class="decrement-qty btn btn-outline-info" data-product_id="{{ product.id }}">
+                                            <div class="input-group-prepend">
+                                                <button class="decrement-qty btn btn-outline-info"
+                                                data-item_id="{{ product.id }}" id="decrement-qty_{{ product.id }}">
                                                     <span class="icon">
                                                         <i class="fas fa-minus"></i>
                                                     </span>
-                                                </button>                                                 
+                                                </button>
                                             </div>
                                             <!-- plus button -->
                                             <div class="input-group-append">
-                                                <button class="increment-qty btn btn-outline-info" data-product_id="{{ product.id }}">
+                                                <button class="increment-qty btn btn-outline-info" data-item_id="{{ product.id }}"
+                                                id="increment-qty_{{ product.id }}">
                                                     <span class="icon">
                                                         <i class="fas fa-plus"></i>
                                                     </span>
@@ -116,4 +118,9 @@
         </div>
     </div>
 </div>    
+{% endblock %}
+
+{% block postloadjs %}
+{{ block.super }}
+{% include 'products/includes/qty_input_js.html' %}
 {% endblock %}
