@@ -160,6 +160,10 @@ transition: 0.4s;
     transform-origin: 50% 50%;
 }
 
+.pl-back {
+    padding-left: 0px;
+}
+
 /* bag */
 
 .bag-main-div, .bag-main-div h2{
