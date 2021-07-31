@@ -31,6 +31,9 @@
 
             <!-- USE THIS TABLE AS TEMPLATEEEEEE -->
         {% if bag_products %}
+        {{bag_products}}
+        <br>
+        {{request.session.bag}}
         <div class="table-responsive">
             <table class="table align-middle table-hover">
                 <thead>
@@ -50,6 +53,7 @@
                         </td>
                         <td class="align-top">
                             <p class="mt-0">{{ product.product.name }}</p>
+                            <p class="mt-0 {% if product.product.has_size != True %}d-none{% endif %}">Size: {{ product.size|upper }}</p>
                             <p class="mt-0 small text-muted">Product code:{{ product.product.pk }}</p>
                         </td>
                         <td class="align-top">
@@ -66,9 +70,10 @@
                 </tbody>
                 {% endfor %} 
                 <tr>
-                    <td colspan="5" class="pt-5 text-end">
-                        <h6><strong>Total: €{{ total|floatformat:2 }}</strong></h6>
-                        <h6>Free Delivery on all our products!</h6>
+                    <td colspan="5" class="pt-1 text-end">
+                        <h6 class="text-muted small"><strong >SubTotal: €{{ total|floatformat:2 }}</strong></h6>
+                        <h6 class="text-muted small">Delivery cost:€{{ delivery }}</h6>
+                        <h3>Total: €{{final_total}}</h3>
                     </td>
                 </tr>
                 <tr>
@@ -77,7 +82,7 @@
                             <span>
                                 <i class="fas fa-chevron-left"></i>
                             </span>
-                            <span>Keep shopping</span>
+                            <span>Continue shopping</span>
                         </a>
                         <!-- CHECK MARGIN TOP -->
                         <a href="{% url 'products' %}" class="mt-2 mt-sm-0 btn btn-outline-dark">
