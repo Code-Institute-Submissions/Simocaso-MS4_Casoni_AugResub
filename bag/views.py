@@ -20,7 +20,7 @@ def add_item(request, product_id):
 
     if size:
         if product_id in list(bag.keys()):
-            if size in bag[product_id]['products_by_size'][size].keys():
+            if size in bag[product_id]['products_by_size'] .keys():
                 bag[product_id]['products_by_size'][size] += quantity
             else:
                 bag[product_id]['products_by_size'][size] = quantity

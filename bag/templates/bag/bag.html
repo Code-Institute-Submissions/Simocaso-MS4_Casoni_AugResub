@@ -31,9 +31,6 @@
 
             <!-- USE THIS TABLE AS TEMPLATEEEEEE -->
         {% if bag_products %}
-        {{bag_products}}
-        <br>
-        {{request.session.bag}}
         <div class="table-responsive">
             <table class="table align-middle table-hover">
                 <thead>
@@ -63,7 +60,6 @@
                             <p class="py-2">{{ product.quantity }}</p>
                         </td>
                         <td class="align-top">
-                            <!-- ERASE <p class="py-2 text-muted">€{% widthratio product.product.price 1 product.quantity %}</p>  -->
                             <p class="py-2 text-muted">€{{ subtotal }}</p> 
                         </td>
                     </tr>
@@ -98,7 +94,7 @@
         {% else %}
         <div>
             <p class="font-subtitle">Your shopping bag is empty</p>
-            <a href="{% url 'products' %}" class="btn btn-outline-info">
+            <a href="{% url 'products' %}" class="btn btn-outline-info my-2">
                 <span>
                     <i class="fas fa-chevron-left"></i>
                 </span>
