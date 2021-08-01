@@ -56,7 +56,7 @@
                             <p class="py-2">€{{ product.product.price }}</p>
                         </td>
                         <td class="align-top w-25">
-                            <form class="form update-form" method="POST" action="">
+                            <form class="form update-form" method="POST" action="{% url 'adjust_bag' product.product_id %}">
                                 {% csrf_token %}
                                 <!-- quantity selector -->
                                 <div class="col-12">
