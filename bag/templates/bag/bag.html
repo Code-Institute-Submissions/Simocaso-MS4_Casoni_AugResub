@@ -98,7 +98,7 @@
                             <!-- update/remove buttons -->
                             <a class="update-link text-info small">Update</a>
                             <a class="remove-item text-danger small float-end" id="remove_{{ product.product_id }}"
-                            data-size="{ product.size }">Remove</a>
+                            data-product_size="{ product.size }">Remove</a>
                         </td>
                         <td class="align-top">
                             <p class="py-2">€{{ product.product.price }}</p>
@@ -162,9 +162,9 @@
     $('.remove-item').click(function(e) {
         var csrfToken = "{{ csrf_token }}";
         var itemId = $(this).attr('id').split('remove_')[1];
-        var size = $(this).data('size');
+        var size = $(this).data('product_size');
         var url = `/bag/remove/${itemId}/`;
-        var data = {'csrfmiddlewaretoken': csrfToken, 'size': size};
+        var data = {'csrfmiddlewaretoken': csrfToken, 'product_size': size};
 
         $.post(url, data)
          .done(function() {
