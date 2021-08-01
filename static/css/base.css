@@ -178,6 +178,16 @@ transition: 0.4s;
 padding-top: 2px;
 }
 
+.message-container{
+    position: fixed;
+    top: 75px;
+    right: 10px;
+    z-index: 10;
+}
+
+.toast-capper{
+    height: 2px;
+}
 
 /* media responsiveness */
 
