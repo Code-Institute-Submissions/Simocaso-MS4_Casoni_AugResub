@@ -101,7 +101,11 @@
     <section class="main-section">
         <div class="overlay"></div>
             {% if messages %}
-                <div class="message-container"></div>
+                <div class="message-container">
+                    {% for message in messages %}
+                        {% include 'includes/toasts/toast_success.html' %}
+                    {% endfor %}
+                </div>
             {% endif %}
 
             {% block page_header %}
