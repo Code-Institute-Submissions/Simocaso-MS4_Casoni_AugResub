@@ -60,17 +60,17 @@
                         </li>
                         {% if user.is_authenticated %}
                             <li class="nav-item user-link-top">
-                                <a class="nav-link link-exp underline-transition" href="{% url 'home' %}">Logout</a>
+                                <a class="nav-link link-exp underline-transition" href="{% url 'account_logout' %}">Logout</a>
                             </li>
                             <li class="nav-item user-link-btm">
                                 <a class="nav-link link-exp underline-transition" href="{% url 'home' %}">My Profile</a>
                             </li>
                         {% else %}
                             <li class="nav-item user-link-top">
-                                <a class="nav-link link-exp underline-transition" href="{% url 'home' %}">Login</a>
+                                <a class="nav-link link-exp underline-transition" href="{% url 'account_login' %}">Login</a>
                             </li>
                             <li class="nav-item user-link-btm">
-                                <a class="nav-link link-exp underline-transition" href="{% url 'home' %}">Signup</a>
+                                <a class="nav-link link-exp underline-transition" href="{% url 'account_signup' %}">Signup</a>
                             </li>
                         {% endif %}
                     </ul>
