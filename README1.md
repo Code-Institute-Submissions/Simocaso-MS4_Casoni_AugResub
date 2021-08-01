@@ -77,8 +77,34 @@ LOGIN_REDIRECT_URL = '/'
 cp -r ../.pip-modules/lib/python3.8/site-packages/allauth/templates/*
 
 17. create the app itself;
-python3 manage.py startapp home
-add the app (new folder) to the motigym settings.py apps
+    python3 manage.py startapp <home>
+    mkdir -p home/templates/name
+    in the name file: create a new file called name.html
+    add extend and content block as required
+    copy paste the view:
+        from django.shortcuts import render
+
+        # Create your views here.
+
+        def index(request):
+            """ a view to return the index page """
+
+            return render(request, 'home/index.html')
+
+        add the app (new folder) to the motigym settings.py apps
+    copy paste the path url:
+        from django.contrib import admin
+        from django.urls import path
+        from . import views
+
+        urlpatterns = [
+            path('', views.index, name='home')
+        ]
+    in motygym urls paste
+        path('name/', include('name.urls')),
+    in settings add:
+        apps : add name
+        templates, dirs: add os.path
 
 18.  load data from fixtures
 python3 manage.py loaddata name
