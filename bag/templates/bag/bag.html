@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load static %}
+{% load bag_tools %}
 
 {% block content %}
 
@@ -8,7 +9,7 @@
     <!-- bag path -->
     <div class="row sm-font text-center">
         <div class="col-12 mt-1">
-            <a class=" text-reset" href="{% url 'products' %">Shop</a>
+            <a class=" text-reset" href="{% url 'products' %}">Shop</a>
             <span>/</span>
             <a class=" text-reset" href="{% url 'view_bag' %}">Your bag</a>    
         </div>         
@@ -96,12 +97,16 @@
                                 </div>
                             </form>
                             <!-- update/remove buttons -->
-                            <a class="update-link text-info small">Update</a>
-                            <a class="remove-item text-danger small float-end" id="remove_{{ product.product_id }}"
-                            data-product_size="{ product.size }">Remove</a>
+                            <a class="update-link text-info small text-decoration-none">Update
+                                <i class="fas fa-sync-alt"></i>
+                            </a>
+                            <a class="remove-item text-danger small float-md-end text-decoration-none" id="remove_{{ product.product_id }}"
+                            data-product_size="{ product.size }">Remove
+                                <i class="fas fa-trash-alt"></i>
+                            </a>
                         </td>
                         <td class="align-top">
-                            <p class="py-2">€{{ product.product.price }}</p>
+                            <p class="py-2">€{{ product.product.price | prd_subtotal:product.quantity }}</p>
                         </td>
                     </tr>
                 </tbody>

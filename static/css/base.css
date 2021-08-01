@@ -155,12 +155,12 @@ transition: 0.4s;
     transition: transform .4s;
 }
 
-.bg-product-img:hover img {
+.bg-product-img:hover img{
     transform: scale(1.3);
     transform-origin: 50% 50%;
 }
 
-.pl-back {
+.pl-back{
     padding-left: 0px;
 }
 
@@ -170,8 +170,12 @@ transition: 0.4s;
     color: black;
 }
 
-.update-link, .remove-item {
+.update-link, .remove-item{
     cursor: pointer;
+}
+
+.remove-item{
+padding-top: 2px;
 }
 
 
