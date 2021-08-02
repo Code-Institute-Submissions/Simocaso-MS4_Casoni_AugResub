@@ -1,13 +1,11 @@
 <!-- toast success -->
-<div class="toast custom-toast rounded">
-    <div class="toast-capper bg-success w-100"></div>
-    <div class="toast-header bg-white text-dark">
-        <strong class="mr-auto">Success</strong>
-        <button type="button" class="ml-2 mb-1 close text-dark" data-dismiss="toast" aria-label="Close">
-            <span class="small" aria-hidden="true">&times;</span>
-        </button>
+<div role="alert" aria-live="assertive" aria-atomic="true" class="toast custom-toast rounded" data-bs-autohide="false">
+    <div class="toast-header">
+      <strong class="me-auto">Success! </strong>
+      <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
     </div>
-    <div class="toast-body">
+    <div class="toast-capper bg-success w-100"></div>
+    <div class="toast-body text-dark bg-white rounded">
         {{ message }}
     </div>
-</div>
+  </div>
