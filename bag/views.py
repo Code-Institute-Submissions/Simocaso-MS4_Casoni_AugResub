@@ -31,7 +31,6 @@ def add_item(request, product_id):
                 bag[product_id]['products_by_size'][size] = quantity
         else:
             bag[product_id] = {'products_by_size': {size: quantity}}
-            messages.success(request, f'You added {product.name} to your bag!')
 
     else:
         if product_id in list(bag.keys()):
@@ -65,8 +64,6 @@ def adjust_bag(request, product_id):
             bag[product_id] = quantity
         else:
             bag.pop(product_id)
-            messages.success(request, f'You added {product.name} to your bag!')
-
 
     request.session['bag'] = bag
     return redirect(reverse('view_bag'))
@@ -90,5 +87,6 @@ def remove_from_bag(request, product_id):
 
         request.session['bag'] = bag
         return HttpResponse(status=200)
+
     except Exception as e:
         return HttpResponse(status=500)

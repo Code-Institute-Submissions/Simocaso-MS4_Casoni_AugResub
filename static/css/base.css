@@ -182,7 +182,11 @@ padding-top: 2px;
     position: fixed;
     top: 75px;
     right: 10px;
-    z-index: 10;
+    z-index: 99999999999;
+}
+
+.custom-toast{
+    overflow: visible;
 }
 
 .toast-capper{
