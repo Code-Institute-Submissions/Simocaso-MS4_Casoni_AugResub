@@ -11,6 +11,7 @@ class MembershipAdmin(admin.ModelAdmin):
     list_display = (
         'name',
         'description',
+        'text',
         'price',
         'image_url',
         'image',
