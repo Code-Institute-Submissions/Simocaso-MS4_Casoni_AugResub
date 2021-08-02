@@ -4,7 +4,7 @@ from django.db.models import Q
 
 from .models import Membership
 
-# Create your views here.
+# initial search view - deprecated
 
 
 def all_memberships(request):
