@@ -57,9 +57,8 @@
                             <hr class="w-100 my-1">
                             <p class="my-2"><span class="lg-font font-mb">€{{ membership.price }}</span>/month</p>
                             <hr class="w-100 my-1">
-                            <p class="sm-font">{{ membership.description }}</p>
-                            <!-- CHANGE INTO TEXT!!!! -->
-                            <p class="sm-font">{{ membership.description }}</p>
+                            <p class="sm-font fw-bolder">{{ membership.description }}</p>
+                            <p class="sm-font pe-2">{{ membership.text }}</p>
                             <a href="{% url 'memberships' %}" class="btn btn-outline-dark">Back</a>
                         </div>
                     </div>
