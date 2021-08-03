@@ -6,5 +6,6 @@ __pycache__/
 *.py[cod]
 node_modules/
 NOTES.md
+README1.md
 *.sqlite3
 *.pyc
