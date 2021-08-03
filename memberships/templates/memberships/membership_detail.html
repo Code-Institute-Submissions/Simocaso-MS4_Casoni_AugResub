@@ -50,15 +50,15 @@
                     </div>
 
                     <!-- membership details -->
-                    <div class="col-12 col-md-7 col-lg-6">
-                        <div class="text-dark p-2">
+                    <div class="col-12 col-md-7 col-lg-6 ps-md-1">
+                        <div class="text-dark p-2 ps-md-0 pt-md-2 pe-md-2 pb-md-2">
                             <h1 class="lg-font">{{ membership.name }}</h1>
                             <p class="font-subtitle">{{ membership.name }} fitness plan</p>
                             <hr class="w-100 my-1">
                             <p class="my-2"><span class="lg-font font-mb">€{{ membership.price }}</span>/month</p>
                             <hr class="w-100 my-1">
-                            <p class="sm-font fw-bolder">{{ membership.description }}</p>
-                            <p class="sm-font pe-2">{{ membership.text }}</p>
+                            <p class="fw-bolder">{{ membership.description }}</p>
+                            <p class="small pe-2">{{ membership.text }}</p>
                             <a href="{% url 'memberships' %}" class="btn btn-outline-dark">Back</a>
                         </div>
                     </div>
