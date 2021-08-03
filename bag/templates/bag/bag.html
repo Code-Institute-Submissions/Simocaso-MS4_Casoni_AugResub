@@ -28,9 +28,9 @@
         </div>
         <hr class="w-100 mb-1">
 
-        <!-- product table medium breakpoint-->
+        <!-- product list before medium breakpoint-->
         {% if bag_products %}
-        <div class="d-block d-md-none">
+        <div class="d-md-none">
             {% for product in bag_products %}
             <div class="row">
                 <!-- image -->
@@ -79,73 +79,71 @@
                         </div>
                     </form>
                     <!-- update/remove buttons -->
-                    <a class="update-link text-info small text-decoration-none">Update
-                        <i class="fas fa-sync-alt"></i>
-                    </a>
-                    <a class="remove-item text-danger small float-md-end text-decoration-none" id="remove_{{ product.product_id }}"
-                    data-product_size="{{ product.size }}">Remove
-                        <i class="fas fa-trash-alt"></i>
-                    </a>
+                    <div>
+                        <a class="update-link text-info small text-decoration-none">Update
+                            <i class="fas fa-sync-alt"></i>
+                        </a>
+                        <a class="remove-item text-danger small float-end text-decoration-none" id="remove_{{ product.product_id }}"
+                        data-product_size="{{ product.size }}">Remove
+                            <i class="fas fa-trash-alt"></i>
+                        </a>
+                    </div>
                 </div>               
                 <!-- description -->
                 <div class="col-12 col-sm-6">
-                    <p class="mb-0">{{ product.product.name }}</p>
+                    <p class="mb-0 fs-3">{{ product.product.name }}</p>
+                    <p class="my-0 small text-muted">Product code:{{ product.product.pk }}</p>
                     <p class="my-0
                     {% if product.product.has_sizes != True %}d-none{% endif %}">Size: {{ product.size|upper }}</p>
-                    <p class="my-0 small text-muted">Product code:{{ product.product.pk }}</p>
-                    <p class="pt-1 my-0">Price: €{{ product.product.price }}</p>
+                    <p class="my-0">Price: €{{ product.product.price }}</p>
                 </div>
                 <!-- subtotal product -->
                 <div class="col-12 col-sm-6">
-                    <p class="py-2">Product subtotal: €{{ product.product.price | prd_subtotal:product.quantity }}</p>
+                    <p class="pt-2 my-0"><span class="fw-bolder">Product subtotal: </span>€{{ product.product.price | prd_subtotal:product.quantity }}</p>
                 </div>
             </div>
-            <hr class="w-100 mb-1">
+            <hr class="w-100 my-1">
             {% endfor %} 
 
-            <!-- CHANGE TO DIVS -->
-                <tr>
-                    <td colspan="5" class="pt-1 text-end">
-                        <h6 class="text-muted small"><strong >SubTotal: €{{ total|floatformat:2 }}</strong></h6>
-                        <h6 class="text-muted small">Delivery cost:€{{ delivery }}</h6>
-                        <h3>Total: €{{ final_total|floatformat:2 }}</h3>
-                    </td>
-                </tr>
-                <tr>
-                    <td colspan="5" class="text-end">
-                        <a href="{% url 'products' %}" class="btn btn-outline-info">
-                            <span>
-                                <i class="fas fa-chevron-left"></i>
-                            </span>
-                            <span>Continue shopping</span>
-                        </a>
-                        <!-- CHECK MARGIN TOP -->
-                        <a href="{% url 'products' %}" class="my-2 my-sm-0 btn btn-outline-dark">
-                            <span class="icon">
-                                <i class="fas fa-lock"></i>
-                            </span>
-                            <span class="text-uppercase small">Checkout Securely Now</span>
-                        </a>
-                    </td>
-                </tr>
-            </table>
-        
-        
+            <!-- checkout total -->
+            <div class="row">
+                <div class="col text-end">
+                    <h6 class="text-muted small"><strong >SubTotal: €{{ total|floatformat:2 }}</strong></h6>
+                    <h6 class="text-muted small">Delivery cost:€{{ delivery }}</h6>
+                    <h3>Total: €{{ final_total|floatformat:2 }}</h3>
+                </div>
             </div>
-            {% else %}
-            <div>
-                <p class="font-subtitle">Your shopping bag is empty</p>
-                <a href="{% url 'products' %}" class="btn btn-outline-info my-2">
-                    <span>
-                        <i class="fas fa-chevron-left"></i>
-                    </span>
-                    <span>Continue shopping</span>
-                </a>
+            <div class="row">
+                <div class="col text-end">
+                    <a href="{% url 'products' %}" class="btn btn-outline-info">
+                        <span>
+                            <i class="fas fa-chevron-left"></i>
+                        </span>
+                        <span>Continue shopping</span>
+                    </a>
+                    <!-- CHECK MARGIN TOP -->
+                    <a href="{% url 'products' %}" class="my-2 my-sm-0 btn btn-outline-dark">
+                        <span class="icon">
+                            <i class="fas fa-lock"></i>
+                        </span>
+                        <span class="text-uppercase small">Checkout Securely Now</span>
+                    </a>
+                </div>
             </div>
+        </div>    
+        {% else %}
+        <div class="d-block d-md-none">
+            <p class="font-subtitle">Your shopping bag is empty</p>
+            <a href="{% url 'products' %}" class="btn btn-outline-info my-2">
+                <span>
+                    <i class="fas fa-chevron-left"></i>
+                </span>
+                <span>Continue shopping</span>
+            </a>
         </div>
         {% endif %}
 
-        <!-- product table medium breakpoint-->
+        <!-- product list after medium breakpoint-->
         {% if bag_products %}
         <div class="table-responsive d-none d-md-block">
             <table class="table align-middle table-hover">
@@ -254,7 +252,7 @@
             </table>
         </div>
         {% else %}
-        <div>
+        <div class="d-none d-md-block">
             <p class="font-subtitle">Your shopping bag is empty</p>
             <a href="{% url 'products' %}" class="btn btn-outline-info my-2">
                 <span>
