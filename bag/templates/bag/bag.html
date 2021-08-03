@@ -37,17 +37,6 @@
                 <div class="col-12 col-sm-6">
                     <img class="img-fluid rounded" src="{{ product.product.image.url }}">
                 </div>
-                <!-- description -->
-                <div class="col-12 col-sm-6">
-                    <p class="mt-0">{{ product.product.name }}</p>
-                    <p class="mt-0
-                    {% if product.product.has_sizes != True %}d-none{% endif %}">Size: {{ product.size|upper }}</p>
-                    <p class="mt-0 small text-muted">Product code:{{ product.product.pk }}</p>
-                </div>
-                <!-- price -->
-                <div class="col-12 col-sm-6">
-                    <p class="py-2">€{{ product.product.price }}</p>
-                </div>
                 <!-- form qty update/remove -->
                 <div class="col-12 col-sm-6">
                     <form class="form update-form" method="POST" action="{% url 'adjust_bag' product.product_id %}">
@@ -97,14 +86,24 @@
                     data-product_size="{{ product.size }}">Remove
                         <i class="fas fa-trash-alt"></i>
                     </a>
+                </div>               
+                <!-- description -->
+                <div class="col-12 col-sm-6">
+                    <p class="mb-0">{{ product.product.name }}</p>
+                    <p class="my-0
+                    {% if product.product.has_sizes != True %}d-none{% endif %}">Size: {{ product.size|upper }}</p>
+                    <p class="my-0 small text-muted">Product code:{{ product.product.pk }}</p>
+                    <p class="pt-1 my-0">Price: €{{ product.product.price }}</p>
                 </div>
                 <!-- subtotal product -->
-                <div class="col-12 col-sm-6 my-2">
+                <div class="col-12 col-sm-6">
                     <p class="py-2">Product subtotal: €{{ product.product.price | prd_subtotal:product.quantity }}</p>
                 </div>
             </div>
             <hr class="w-100 mb-1">
             {% endfor %} 
+
+            <!-- CHANGE TO DIVS -->
                 <tr>
                     <td colspan="5" class="pt-1 text-end">
                         <h6 class="text-muted small"><strong >SubTotal: €{{ total|floatformat:2 }}</strong></h6>
@@ -179,8 +178,7 @@
                                 {% csrf_token %}
                                 <!-- quantity selector -->
                                 <div class="col-12">
-                                    <p class="mt-3"><strong>Quantity:</strong></p>
-                                    <div class="form-group w-100">
+                                    <div class="form-group w-100 mt-2">
                                         <div class="input-group">
                                             
                                             <!-- minus button -->
