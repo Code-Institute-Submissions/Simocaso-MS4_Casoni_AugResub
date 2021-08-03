@@ -17,6 +17,7 @@ python3 manage.py runserver
 6. To start migrations:
 python3 manage.py makemigrations --dry-run
 python3 manage.py makemigrations 
+(verify that the new field , if empty, has null=True)
 python3 manage.py migrate --plan
 python3 manage.py migrate
 
