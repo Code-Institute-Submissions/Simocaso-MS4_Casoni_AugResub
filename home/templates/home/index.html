@@ -4,25 +4,24 @@
 
 {% block content %}
 
-<div class="container">
+<div class="container container-max-width">
 
   <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
     <!-- carousel buttons -->
     <div class="carousel-indicators">
       <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-
       <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
     </div>
 
     <div class="carousel-inner">
         <!-- first -->
-        <div class="carousel-item active">
+        <div class="carousel-item active" data-bs-interval="3000">
             <div class="text-carousel total-vh">
                 <h1 class="display-4 text-black">Discover our<br>Fitness Plans here! Or..</h1><a class="btn btn-lg btn-outline-light my-4" href="{% url 'memberships' %}" role="button"> Start now</a> 
             </div>
         </div>
         <!-- second -->
-        <div class="carousel-item">
+        <div class="carousel-item" data-bs-interval="3000">
             <div class="text-carousel total-vh">
                 <h1 class="display-4 text-black">..Start shopping<br>with us!</h1><a class="btn btn-lg btn-outline-light my-4" href="{% url 'products' %}" role="button"> Shop now</a>
             </div>
