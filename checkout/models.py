@@ -11,26 +11,24 @@ from products.models import Product
 
 class Order(models.Model):
     order_number = models.CharField(max_length=40, null=False, editable=False)
-    first_name = models.CharField(max_length=20, null=False, blank=False)
-    last_name = models.CharField(max_length=20, null=False, blank=False)
-    email_address = models.CharField(max_length=50, null=False, blank=False)
-    address = models.CharField(max_length=100, null=False, blank=False)
+    full_name = models.CharField(max_length=50, null=False, blank=False)
+    email = models.CharField(max_length=50, null=False, blank=False)
+    phone_number = models.CharField(max_length=16, null=False, blank=False)
+    country = CountryField(blank_label='Country', max_length=40, null=False, blank=False)
     postcode = models.CharField(max_length=20, null=True, blank=True)
-    town = models.CharField(max_length=50, null=False, blank=False)
-    country = CountryField(blank_label='Country', null=False, blank=False)
-    order_date = models.DateField("Order Date", auto_now_add=True)
-    delivery = models.DecimalField(
-        max_digits=6, decimal_places=2, null=False, default=0)
-    total = models.DecimalField(
-        max_digits=10,
-        decimal_places=2,
-        null=False,
-        default=0)
-    final_total = models.DecimalField(
-        max_digits=10,
-        decimal_places=2,
-        null=False,
-        default=0)
+    town_or_city = models.CharField(max_length=50, null=False, blank=False)
+    address = models.CharField(max_length=100, null=False, blank=False)
+    date = models.DateField("Order Date", auto_now_add=True)
+    delivery = models.DecimalField(max_digits=6,
+                                   decimal_places=2, null=False, default=0)
+    order_total = models.DecimalField(max_digits=10,
+                                      decimal_places=2,
+                                      null=False,
+                                      default=0)
+    final_total = models.DecimalField(max_digits=10,
+                                      decimal_places=2,
+                                      null=False,
+                                      default=0)
 
     def _generate_order_number(self):
         """
@@ -42,7 +40,8 @@ class Order(models.Model):
         """
         Updates cart total each time an order item is added
         """
-        self.total = self.lineitems.aggregate(Sum('lineitem_total'))['lineitem_total__sum']
+        self.total = self.lineitems.aggregate(
+            Sum('lineitem_total'))['lineitem_total__sum']
         self.final_total = self.total + self.delivery
         self.save()
 
@@ -55,20 +54,22 @@ class Order(models.Model):
             self.order_number = self._generate_order_number()
         super().save(*args, **kwargs)
 
+    def __str__(self):
+        return self.order_number
 
-class OrderlineItem(models.Model):
-    order = models.ForeignKey(
-        Order, null=False, blank=False,
-        on_delete=models.CASCADE, related_name='lineitems')
-    product = models.ForeignKey(
-        Product, null=False, blank=False, on_delete=models.CASCADE)
-    product_size = models.CharField(
-        max_length=2, null=True, blank=True)
-    quantity = models.IntegerField(
-        null=False, blank=False, default=0)
-    lineitem_total = models.DecimalField(
-        max_digits=6,
-        decimal_places=2, null=False, blank=False, editable=False)
+
+class OrderLineItem(models.Model):
+    order = models.ForeignKey(Order, null=False, blank=False,
+                              on_delete=models.CASCADE,
+                              related_name='lineitems')
+    product = models.ForeignKey(Product, null=False,
+                                blank=False, on_delete=models.CASCADE)
+    product_size = models.CharField(max_length=2, null=True, blank=True)
+    quantity = models.IntegerField(null=False, blank=False, default=0)
+    lineitem_total = models.DecimalField(max_digits=6,
+                                         decimal_places=2,
+                                         null=False, blank=False,
+                                         editable=False)
 
     def save(self, *args, **kwargs):
         """
