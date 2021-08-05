@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% load static %}
+{% load bag_tools %}
+
+{% block content %}
+
+<div class="container-fluid">
+
+    <!-- bag path -->
+    <div class="row sm-font text-center">
+        <div class="col-12 mt-1">
+            <a class=" text-reset" href="{% url 'products' %}">Shop</a>
+            <span>/</span>
+            <a class=" text-reset" href="{% url 'view_bag' %}">Your bag</a>    
+        </div>         
+    </div>
+</div>
+
+<!-- bag header -->
+
+<div class="container-fluid row g-0">
+    <div class="rounded my-4 bag-main-div col-10 offset-1 bg-light p-2">
+         <div class="row">
+            <div class="col-12 text-start mt-2">
+                <h2 class="d-none d-sm-block">Your Shopping Bag:</h2>
+                <h4 class="d-sm-none" >Your Shopping Bag:</h4>
+            </div>
+        </div>
+        <hr class="w-100 mb-1">   
+    </div>
+</div>
+{% endblock %}
