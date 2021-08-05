@@ -42,7 +42,7 @@
                         {{ order_form.full_name | as_crispy_field }}
                         {{ order_form.email | as_crispy_field }}
                     </fieldset>  
-                    <fieldset class="rounded px-3 mb-5">
+                    <fieldset class="rounded px-3 mb-3">
                         <legend class="fieldset-label w-auto small text-black px-2">Shipping info:</legend>
                         {{ order_form.phone_number | as_crispy_field }}
                         {{ order_form.country | as_crispy_field }}
@@ -51,7 +51,7 @@
                         {{ order_form.street_address1 | as_crispy_field }}
                         {{ order_form.street_address2 | as_crispy_field }}
                         {{ order_form.county | as_crispy_field }}
-                        <div class="form-check form-check-inline ms-0 float-start">
+                        <div class="form-check form-check-inline ps-0 float-start">
                             {% if user.is_authenticated %}
                                 <label class="form-check-label" for="id-save-info">Save this delivery information to my profile</label>
                                 <input class="form-check-input ms-2 me-0" id="id-save-info" type="checkbox" name="save-info" checked>
@@ -65,16 +65,34 @@
                     </fieldset>  
                     <fieldset class="rounded px-3 mb-5">
                         <legend class="fieldset-label w-auto small text-black px-2">Payment:</legend>
-                        
                         <div class="mb-3" id="card-element"></div>
-
                         <div class="mb-3 text-danger" role="alert" id="card-errors"></div>
-                    
                     </fieldset>  
+
+                    <!-- payment submit btn -->
+                    <div class="submit-button my-2">
+                        <a href="{% url 'view_bag' %}" class="btn btn-outline-info">
+                            <span>
+                                <i class="fas fa-chevron-left"></i>
+                            </span>
+                            <span>Adjust bag</span>
+                        </a>
+                        <button id="submit-button" class="btn btn-outline-dark">
+                            <span class="icon">
+                                <i class="fas fa-lock"></i>
+                            </span>
+                            <span class="text-uppercase small">Complete order now</span>
+                        </button>
+                        <p class="mb-3 text-success">
+                            <span>
+                                <i class="fas fa-exclamation-circle"></i>
+                            </span>
+                            <span><strong>Total price to be charge: €{{ final_total|floatformat:2 }}</strong></span>
+                        </p>
+                    </div>
                 </form>
            </div>
        </div>
    </div>
-
 </div>
 {% endblock %}
