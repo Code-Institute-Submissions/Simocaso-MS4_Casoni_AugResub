@@ -168,6 +168,10 @@ transition: 0.4s;
     color: black;
 }
 
+.bag-main-div{
+    padding-right: 16px!important;
+}
+
 .update-link, .remove-item{
     cursor: pointer;
 }

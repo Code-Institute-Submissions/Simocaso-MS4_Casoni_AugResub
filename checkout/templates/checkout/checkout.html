@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load static %}
+{% load bag_tools %}
 
 {% block extra_css %}
     <link rel="stylesheet" href="{% static 'checkout/css/checkout.css' %}">
@@ -23,7 +24,7 @@
 
 <div class="container-fluid row g-0">
     <div class="rounded mt-1 mb-3 my-md-4 bag-main-div col-10 offset-1 bg-light p-2">
-         <div class="row">
+        <div class="row">
             <div class="col-12 text-start mt-2">
                 <h2 class="d-none d-sm-block">Your Shopping Bag:</h2>
                 <h4 class="d-sm-none mb-0" >Your Shopping Bag:</h4>
@@ -31,10 +32,16 @@
         </div>
         <hr class="w-100 mb-1">
 
-        <div class="row">
-           <div class="col-12 col-lg-6 mt-2">
+        <div class="row checkout-main-div">
+
+            <!-- checkout product list -->
+            <div class="col-12 col-lg-6 order-lg-last mt-2 checkout-list">
+                
+            </div>
+
+            <!-- checkout form -->
+            <div class="col-12 col-lg-6 mt-2">
                 <p class="text-muted">Please fill out this form below to complete your order:</p>
-                <!-- checkout form -->
                 <form action="{% url 'checkout' %}" method="POST" id="checkout-form">
                     {% csrf_token %}
                     <fieldset class="rounded px-3 mb-2 mb-md-4">
@@ -92,7 +99,8 @@
                     </div>
                 </form>
            </div>
-       </div>
+        </div>
+
    </div>
 </div>
 {% endblock %}
