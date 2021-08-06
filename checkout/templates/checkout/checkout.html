@@ -15,7 +15,9 @@
         <div class="col-12 mt-1">
             <a class=" text-reset" href="{% url 'products' %}">Shop</a>
             <span>/</span>
-            <a class=" text-reset" href="{% url 'view_bag' %}">Your bag</a>    
+            <a class=" text-reset" href="{% url 'view_bag' %}">Your bag</a>
+            <span>/</span>
+            <a class=" text-reset" href="{% url 'checkout' %}">Checkout</a>
         </div>         
     </div>
 </div>
@@ -35,12 +37,38 @@
         <div class="row checkout-main-div">
 
             <!-- checkout product list -->
-            <div class="col-12 col-lg-6 order-lg-last mt-2 checkout-list">
-                
+            <div class="col-12 col-lg-6 order-lg-last mt-2 ">
+                <div class="row ">
+                    <div class="col-8">
+                        <p class="mb-1 mt-0 small text-muted">Item</p> 
+                    </div>
+                    <div class="col-4">
+                        <p class="mb-1 mt-0 small text-muted">Subtotal</p> 
+                    </div>
+                </div>
+                <div class="checkout-list border border-info rounded">
+                    {% for product in bag_products %}
+                        <div class="row">
+                            <div class="col-4 mb-1">
+                                <img class="img-fluid rounded w-75" src="{{ product.product.image.url }}">
+                            </div>
+                            <div class="col-4">
+                                <p class="my-0 small">{{ product.product.name }}</p>
+                                <p class="my-0 small text-muted {% if product.product.has_sizes != True %}d-none{% endif %}">
+                                    Size: {{ product.size|upper }}</p>
+                                <p class="my-0 small text-muted">Qty: {{ product.quantity }}</p>
+                            </div>
+                            <div class="col-4">
+                                <p class="my-0">€{{ product.product.price | prd_subtotal:product.quantity }}</p>
+                            </div>
+                        </div>
+                        <hr class="w-100 mb-1">
+                    {% endfor %}
+                </div>
             </div>
 
             <!-- checkout form -->
-            <div class="col-12 col-lg-6 mt-2">
+            <div class="col-12 col-lg-6 mt-3">
                 <p class="text-muted">Please fill out this form below to complete your order:</p>
                 <form action="{% url 'checkout' %}" method="POST" id="checkout-form">
                     {% csrf_token %}
@@ -70,21 +98,29 @@
                             {% endif %}
                         </div>
                     </fieldset>  
-                    <fieldset class="rounded px-3 mb-1">
-                        <legend class="fieldset-label w-auto small text-black px-2">Payment:</legend>
+                    <fieldset class="rounded px-3 my-1">
+                        <legend class="fieldset-label w-auto small text-black px-2">Payment</legend>
                         <div class="mb-1" id="card-element"></div>
                         <div class="mb-1 text-danger" role="alert" id="card-errors"></div>
                     </fieldset>  
+                    
+                    <div class="text-start my-3 px-3">
+                        <hr class="w-100">
+                        <h6 class="text-muted small"><strong >SubTotal: €{{ total|floatformat:2 }}</strong></h6>
+                        <h6 class="text-muted small">Delivery cost:€{{ delivery }}</h6>
+                        <h5>Total: €{{ final_total|floatformat:2 }}</h5>
+                        <hr class="w-100">
+                    </div>
 
                     <!-- payment submit btn -->
                     <div class="submit-button text-center text-md-end my-2 px-3">
-                        <a href="{% url 'view_bag' %}" class="btn">
+                        <a href="{% url 'view_bag' %}" class="btn mt-1">
                             <span>
                                 <i class="fas fa-chevron-left"></i>
                             </span>
                             <span>Adjust bag</span>
                         </a>
-                        <button id="submit-button" class="btn btn-info text-uppercase">
+                        <button id="submit-button" class="btn btn-info mt-1 text-uppercase">
                             <span class="icon">
                                 <i class="fas fa-lock"></i>
                             </span>

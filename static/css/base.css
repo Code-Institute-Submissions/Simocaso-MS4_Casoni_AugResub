@@ -170,6 +170,7 @@ transition: 0.4s;
 
 .bag-main-div{
     padding-right: 16px!important;
+    padding-left: 16px!important;
 }
 
 .update-link, .remove-item{
