@@ -22,11 +22,11 @@
 <!-- bag header -->
 
 <div class="container-fluid row g-0">
-    <div class="rounded my-4 bag-main-div col-10 offset-1 bg-light p-2">
+    <div class="rounded mt-1 mb-3 my-md-4 bag-main-div col-10 offset-1 bg-light p-2">
          <div class="row">
             <div class="col-12 text-start mt-2">
                 <h2 class="d-none d-sm-block">Your Shopping Bag:</h2>
-                <h4 class="d-sm-none" >Your Shopping Bag:</h4>
+                <h4 class="d-sm-none mb-0" >Your Shopping Bag:</h4>
             </div>
         </div>
         <hr class="w-100 mb-1">
@@ -37,7 +37,7 @@
                 <!-- checkout form -->
                 <form action="{% url 'checkout' %}" method="POST" id="checkout-form">
                     {% csrf_token %}
-                    <fieldset class="rounded px-3 mb-5">
+                    <fieldset class="rounded px-3 mb-2 mb-md-4">
                         <legend class="fieldset-label w-auto small text-black px-2">Your details:</legend>
                         {{ order_form.full_name | as_crispy_field }}
                         {{ order_form.email | as_crispy_field }}
@@ -51,10 +51,10 @@
                         {{ order_form.street_address1 | as_crispy_field }}
                         {{ order_form.street_address2 | as_crispy_field }}
                         {{ order_form.county | as_crispy_field }}
-                        <div class="form-check form-check-inline ps-0 float-start">
+                        <div class="form-check form-check-inline ps-1 mt-2 float-start">
                             {% if user.is_authenticated %}
-                                <label class="form-check-label" for="id-save-info">Save this delivery information to my profile</label>
-                                <input class="form-check-input ms-2 me-0" id="id-save-info" type="checkbox" name="save-info" checked>
+                                <input class="form-check-input mx-0" id="id-save-info" type="checkbox" name="save-info" checked>
+                                <label class="form-check-label text-co-smaller ps-1" for="id-save-info">Save this info to my profile</label>
                             {% else %}
                                 <label class="form-check-label" for="id-save-info">
                                     <a class="text-info" href="{% url 'account_signup' %}">Creat an account</a> or
@@ -63,27 +63,27 @@
                             {% endif %}
                         </div>
                     </fieldset>  
-                    <fieldset class="rounded px-3 mb-5">
+                    <fieldset class="rounded px-3 mb-1">
                         <legend class="fieldset-label w-auto small text-black px-2">Payment:</legend>
-                        <div class="mb-3" id="card-element"></div>
-                        <div class="mb-3 text-danger" role="alert" id="card-errors"></div>
+                        <div class="mb-1" id="card-element"></div>
+                        <div class="mb-1 text-danger" role="alert" id="card-errors"></div>
                     </fieldset>  
 
                     <!-- payment submit btn -->
-                    <div class="submit-button my-2">
-                        <a href="{% url 'view_bag' %}" class="btn btn-outline-info">
+                    <div class="submit-button text-center text-md-end my-2 px-3">
+                        <a href="{% url 'view_bag' %}" class="btn">
                             <span>
                                 <i class="fas fa-chevron-left"></i>
                             </span>
                             <span>Adjust bag</span>
                         </a>
-                        <button id="submit-button" class="btn btn-outline-dark">
+                        <button id="submit-button" class="btn btn-info text-uppercase">
                             <span class="icon">
                                 <i class="fas fa-lock"></i>
                             </span>
                             <span class="text-uppercase small">Complete order now</span>
                         </button>
-                        <p class="mb-3 text-success">
+                        <p class="mb-3 text-success ms-0 ms-sm-2 mt-2">
                             <span>
                                 <i class="fas fa-exclamation-circle"></i>
                             </span>

@@ -35,6 +35,7 @@
             <div class="row">
                 <!-- image -->
                 <div class="col-12 col-sm-6">
+                    <p class="mb-0 fs-3">{{ product.product.name }}</p>
                     <img class="img-fluid rounded" src="{{ product.product.image.url }}">
                 </div>
                 <!-- form qty update/remove -->
@@ -89,7 +90,6 @@
                 </div>               
                 <!-- description -->
                 <div class="col-12 col-sm-6">
-                    <p class="mb-0 fs-3">{{ product.product.name }}</p>
                     <p class="my-0 small text-muted">Product code:{{ product.product.pk }}</p>
                     <p class="my-0
                     {% if product.product.has_sizes != True %}d-none{% endif %}">Size: {{ product.size|upper }}</p>
@@ -97,10 +97,10 @@
                 </div>
                 <!-- subtotal product -->
                 <div class="col-12 col-sm-6">
-                    <p class="pt-2 my-0"><span class="fw-bolder">Product subtotal: </span>€{{ product.product.price | prd_subtotal:product.quantity }}</p>
+                    <p class="pt-2 text-center mt-0 mb-1"><span class="fw-bolder">Product subtotal: </span>€{{ product.product.price | prd_subtotal:product.quantity }}</p>
                 </div>
             </div>
-            <hr class="w-100 my-1">
+            <hr class="w-100 mt-1 mb-4">
             {% endfor %} 
 
             <!-- checkout total -->
@@ -112,14 +112,14 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col text-end">
-                    <a href="{% url 'products' %}" class="btn btn-outline-info">
+                <div class="col text-center">
+                    <a href="{% url 'products' %}" class="btn">
                         <span>
                             <i class="fas fa-chevron-left"></i>
                         </span>
                         <span>Continue shopping</span>
                     </a>
-                    <a href="{% url 'products' %}" class="my-2 my-sm-0 btn btn-outline-dark">
+                    <a href="{% url 'checkout' %}" class="my-2 my-sm-0 btn btn-info text-uppercase">
                         <span class="icon">
                             <i class="fas fa-lock"></i>
                         </span>
@@ -231,13 +231,13 @@
                 </tr>
                 <tr>
                     <td colspan="5" class="text-end">
-                        <a href="{% url 'products' %}" class="btn btn-outline-info">
+                        <a href="{% url 'products' %}" class="btn">
                             <span>
                                 <i class="fas fa-chevron-left"></i>
                             </span>
                             <span>Continue shopping</span>
                         </a>
-                        <a href="{% url 'products' %}" class="my-2 my-sm-0 btn btn-outline-dark">
+                        <a href="{% url 'products' %}" class="my-2 my-sm-0 btn btn-info">
                             <span class="icon">
                                 <i class="fas fa-lock"></i>
                             </span>

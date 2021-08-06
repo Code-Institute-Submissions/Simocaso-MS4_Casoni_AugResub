@@ -1,0 +1,6 @@
+/* media responsiveness */
+@media only screen and (max-width: 436px){
+    .text-co-smaller{
+    font-size: 13px;
+  }
+}
