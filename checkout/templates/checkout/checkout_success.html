@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'checkout/css/checkout.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<!-- checkout success header -->
+
+<div class="container-fluid row g-0">
+    <div class="rounded mt-1 mb-3 my-md-4 bag-main-div col-10 offset-1 bg-light p-2">
+        <div class="row">
+            <div class="col-12 text-start mt-2">
+                <h4>Thank You!</h4>
+                <p>Your order information is below. A confirmation email will be sent to <strong>{{ order.email}}</strong></p>
+            </div>
+        </div>
+        <hr class="w-100 mb-1">
+
+        <div class="row checkout-main-div">
+
+            <!-- checkout product list -->
+            <div class="col-12 col-lg-6 order-lg-last mt-2 ">
+                <a href="{% url 'home' %}" class="btn btn-outline-info my-2">
+                    <span>
+                        <i class="fas fa-chevron-left"></i>
+                    </span>
+                    <span>Go back to the home page</span>
+                </a>
+            </div>
+        </div>
+   </div>
+</div>
+{% endblock %}
