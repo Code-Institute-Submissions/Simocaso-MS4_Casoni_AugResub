@@ -63,7 +63,6 @@
                                 <p class="my-0">€{{ product.product.price | prd_subtotal:product.quantity }}</p>
                             </div>
                         </div>
-                        <hr class="w-100 mb-1">
                     {% endfor %}
                 </div>
             </div>
@@ -121,7 +120,7 @@
                             </span>
                             <span>Adjust bag</span>
                         </a>
-                        <button id="submit-button" class="btn btn-info mt-1 text-uppercase">
+                        <button id="submit-button" class="btn btn-info mt-1 shadow">
                             <span class="icon">
                                 <i class="fas fa-lock"></i>
                             </span>
@@ -140,4 +139,12 @@
 
    </div>
 </div>
+{% endblock %}
+
+{% block postloadjs %}
+    {{ block.super }}
+    {{ stripe_public_key|json_script:"id_stripe_public_key" }}
+    {{ client_secret|json_script:"id_client_secret" }}
+    <script src="{% static 'checkout/js/stripe_elements.js' %}"></script>
+
 {% endblock %}
