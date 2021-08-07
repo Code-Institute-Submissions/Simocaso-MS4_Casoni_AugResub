@@ -8,9 +8,8 @@
 {% block content %}
 
 <!-- checkout success header -->
-
 <div class="container-fluid row g-0">
-    <div class="rounded mt-1 mb-3 my-md-4 bag-main-div col-10 offset-1 bg-light p-2">
+    <div class="rounded mt-1 mb-3 my-md-4 bag-main-div col-10 offset-1 bg-light p-2 mt-3">
         <div class="row">
             <div class="col-12 text-start mt-2">
                 <h4>Thank You!</h4>
@@ -19,21 +18,174 @@
         </div>
         <hr class="w-100 mb-1">
 
+        <!--Order details and delivery address-->
         <div class="row">
-            <div class="col-12 col-lg-7">
-                <a href="{% url 'home' %}" class="btn btn-outline-info my-2">
+            <div class="col-12 col-md-10 offset-md-1">
+                <div class="order-confirmation-wrapper">
+
+                    <!-- order number and date -->
+                    <div class="row my-3">
+                        <div class="col">
+                            <h4 class="text-center">Order Info</h4>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12 col-md-5">
+                            <p class="mb-0 success-header"><strong>Order Number</strong></p>
+                        </div>
+                        <div class="col-12 col-md-7">
+                            <p class="mb-0 small">{{ order.order_number }}</p>
+                        </div>
+                    </div>
+                    <div class="row mb-2">
+                        <div class="col-12 col-md-5">
+                            <p class="mb-0 success-header"><strong>Order Date</strong></p>
+                        </div>
+                        <div class="col-12 col-md-7">
+                            <p class="mb-0">{{ order.date }}</p>
+                        </div>
+                    </div>
+                    <hr class="w-100 mb-1 text-info">
+
+                    <!-- order details -->
+                    <div class="row">
+                        <div class="col">
+                            <small class="success-header"><strong>Order Details:</strong></small>
+                        </div>
+                    </div>
+
+                    {% for product in order.lineitems.all %}
+                    <div class="row mb-2">
+                        <div class="col-12 col-md-5">
+                            <p class="small mb-0 ">
+                            {{ product.product.name }}
+                            </p>
+                        </div>
+                        <div class="col-12 col-md-7">
+                            <p class="small mb-0">{{ product.quantity }} x €{{ product.product.price }} each</p>
+                        </div>
+                    </div>
+                    {% endfor %}
+                    <hr class="w-100 mb-1 text-info">
+
+                    <!-- shipping details -->
+                    <div class="row">
+                        <div class="col">
+                            <small class="success-header"><strong>Delivering To:</strong></small>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12 col-md-5">
+                            <p class="mb-0">Full Name</p>
+                        </div>
+                        <div class="col-12 col-md-7">
+                            <p class="mb-0">{{ order.full_name }}</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12 col-md-5">
+                            <p class="mb-0">Address 1</p>
+                        </div>
+                        <div class="col-12 col-md-7">
+                            <p class="mb-0">{{ order.street_address1 }}</p>
+                        </div>
+                    </div>
+                    {% if order.street_address2 %}
+                    <div class="row">
+                        <div class="col-12 col-md-5">
+                            <p class="mb-0">Address 2</p>
+                        </div>
+                        <div class="col-12 col-md-7">
+                            <p class="mb-0">{{ order.street_address2 }}</p>
+                        </div>
+                    </div>
+                    {% endif %}
+                    {% if order.county %}
+                    <div class="row">
+                        <div class="col-12 col-md-5">
+                            <p class="mb-0">County</p>
+                        </div>
+                        <div class="col-12 col-md-7">
+                            <p class="mb-0">{{ order.county }}</p>
+                        </div>
+                    </div>
+                    {% endif %}
+                    <div class="row">
+                        <div class="col-12 col-md-5">
+                            <p class="mb-0">Town or City</p>
+                        </div>
+                        <div class="col-12 col-md-7">
+                            <p class="mb-0">{{ order.town_or_city }}</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12 col-md-5">
+                            <p class="mb-0">Postal Code</p>
+                        </div>
+                        <div class="col-12 col-md-7">
+                            <p class="mb-0">{{ order.postcode }}</p>
+                        </div>
+                    </div>
+                    {% if order.country %}
+                    <div class="row">
+                        <div class="col-12 col-md-5">
+                            <p class="mb-0">Country</p>
+                        </div>
+                        <div class="col-12 col-md-7">
+                            <p class="mb-0">{{ order.country }}</p>
+                        </div>
+                    </div>
+                    {% endif %}
+                    <div class="row mb-3">
+                        <div class="col-12 col-md-5">
+                            <p class="mb-0">Phone Number</p>
+                        </div>
+                        <div class="col-12 col-md-7">
+                            <p class="mb-0">{{ order.phone_number }}</p>
+                        </div>
+                    </div>
+                    <hr class="w-100 mb-1 text-info">
+
+                    <!-- billing info -->
+                    <div class="row">
+                        <div class="col">
+                            <p class="success-header mb-0"><strong>Billing Info:</strong></p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-5">
+                            <p class="mb-0">Order Total</p>
+                        </div>
+                        <div class="col-7">
+                            <p class="mb-0 text-muted">{{ order.order_total }}</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-5">
+                            <p class="mb-0">Delivery</p>
+                        </div>
+                        <div class="col-7">
+                            <p class="mb-0 text-muted">{{ order.delivery_cost }}</p>
+                        </div>
+                    </div>
+                    <div class="row mb-2">
+                        <div class="col-5">
+                            <p class="mb-0">Total</p>
+                        </div>
+                        <div class="col-7">
+                            <p class="mb-0"><strong>€{{ order.final_total }}</strong></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 col-md-10 offset-md-1 mb-3">
+                <a href="{% url 'home' %}" class="btn btn-info my-4">
                     <span>
                         <i class="fas fa-chevron-left"></i>
                     </span>
                     <span>Go back to the home page</span>
-                </a>
-            </div>
-            <div class="col-12 col-lg-5">
-                <a href="{% url 'home' %}" class="btn btn-outline-info my-2">
-                    <span>
-                        <i class="fas fa-chevron-left"></i>
-                    </span>
-                    <span>test test</span>
                 </a>
             </div>
         </div>
