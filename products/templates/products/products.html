@@ -28,6 +28,11 @@
         <div class="row">
             <div class="col-lg-10 offset-lg-1 col-12 mb-4">
                 <div class="row g-0 p-1">
+                {% if products.count == 0 %}
+                <div class="text-dark">
+                    <h4>Ops! No products found, Looking for <a href="{% url 'memberships' %}">Membership offers</a> instead?</h4>
+                </div>
+                {% endif %}
                 {% for product in products %}
                 <div class="p-1 col-6 col-md-4 col-xl-3 my-3">
                     <div class="rounded bg-white">
