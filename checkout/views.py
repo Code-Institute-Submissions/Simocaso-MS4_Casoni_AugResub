@@ -1,10 +1,10 @@
-from django.shortcuts import render, redirect, reverse
+from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
 from django.conf import settings
 
 from .forms import OrderForm
 from .models import Order, OrderLineItem
-
+from products.models import Product
 from bag.contexts import bag_contents
 
 import stripe
@@ -35,16 +35,16 @@ def checkout(request):
             order = order_form.save()
             for product_id, product_data in bag.items():
                 try:
-                    product = Product.objects.get(id=item_id)
-                    if isinstance(item_data, int):
+                    product = Product.objects.get(id=product_id)
+                    if isinstance(product_data, int):
                         order_line_item = OrderLineItem(
                             order=order,
                             product=product,
-                            quantity=item_data,
+                            quantity=product_data,
                         )
                         order_line_item.save()
                     else:
-                        for size, quantity in item_data['items_by_size'].items(
+                        for size, quantity in product_data['products_by_size'].items(
                         ):
                             order_line_item = OrderLineItem(
                                 order=order,
