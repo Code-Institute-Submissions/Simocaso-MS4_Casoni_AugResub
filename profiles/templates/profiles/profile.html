@@ -21,16 +21,16 @@
         <div class="row">
             <!--Delivery Information-->
             <div class="col-sm-12 col-lg-6">
-                <p>Delivery Details</p>
+                <p class="bold fs-5">Delivery Details</p>
                 <form class="mt-3" action="{% url 'profile' %}" method="POST" id="profile-update-form">
                     {% csrf_token %}
                     {{ form|crispy }}                    
-                    <button class="btn btn-info">Update Information</button>
+                    <button class="btn btn-info my-4 float-end">Update Information</button>
                 </form>
             </div>
             <!--Order History-->
             <div class="col-sm-12 col-lg-6">
-                <p class="text-muted">Order History</p>
+                <p class="bold fs-5">Order History</p>
                 {{ orders }}
             </div>
         </div>
