@@ -181,12 +181,21 @@
         </div>
         <div class="row">
             <div class="col-12 col-md-10 offset-md-1 mb-3">
+                {% if from_profile %}
+                <a href="{% url 'profile' %}" class="btn btn-info my-4">
+                    <span>
+                        <i class="fas fa-chevron-left"></i>
+                    </span>
+                    <span>Go back to the profile page</span>
+                </a>
+                {% else %}
                 <a href="{% url 'home' %}" class="btn btn-info my-4">
                     <span>
                         <i class="fas fa-chevron-left"></i>
                     </span>
                     <span>Go back to the home page</span>
                 </a>
+                {% endif %}
             </div>
         </div>
    </div>
