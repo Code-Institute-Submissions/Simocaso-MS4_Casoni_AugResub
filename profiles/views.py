@@ -23,7 +23,6 @@ def profile(request):
     else:
         #  populate form with users profile information
         form = UserProfileForm(instance=profile)
-
     # #  return users orders
     orders = profile.orders.all()
 

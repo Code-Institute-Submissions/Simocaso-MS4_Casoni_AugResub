@@ -36,7 +36,11 @@
                 <!-- image -->
                 <div class="col-12 col-sm-6">
                     <p class="mb-0 fs-3">{{ product.product.name }}</p>
-                    <img class="img-fluid rounded" src="{{ product.product.image.url }}">
+                    {% if product.product.image %}
+                        <img class="card-img-top img-fluid rounded" src="{{ product.product.image.url }}" alt="{{ product.product.name }}">
+                    {% else %}
+                        <img class="card-img-top img-fluid rounded" src="{{ MEDIA_URL }}no-image.png" alt="{{ product.product.name }}">
+                    {% endif %}
                 </div>
                 <!-- form qty update/remove -->
                 <div class="col-12 col-sm-6">
@@ -158,7 +162,11 @@
                 <tbody>
                     <tr>
                         <td class="align-top w-25">
-                            <img class="img-fluid small-prd-img rounded" src="{{ product.product.image.url }}">
+                            {% if product.product.image %}
+                                <img class="img-fluid small-prd-img rounded" src="{{ product.product.image.url }}" alt="{{ product.product.name }}">
+                            {% else %}
+                                <img class="img-fluid small-prd-img rounded" src="{{ MEDIA_URL }}no-image.png" alt="{{ product.product.name }}">
+                            {% endif %}
                         </td>
                         <td class="align-top">
                             <p class="mt-0">{{ product.product.name }}</p>

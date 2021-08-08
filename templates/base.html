@@ -59,11 +59,16 @@
                             <a class="nav-link link-exp underline-transition" aria-current="page" href="{% url 'info' %}">Info</a>
                         </li>
                         {% if user.is_authenticated %}
+                            {% if request.user.is_superuser %}
+                                <li class="nav-item user-link-top">
+                                    <a class="nav-link link-exp underline-transition" href="{% url 'add_product' %}">Mgt</a>
+                                </li> 
+                            {% endif%}
                             <li class="nav-item user-link-top">
-                                <a class="nav-link link-exp underline-transition" href="{% url 'account_logout' %}">Logout</a>
+                                <a class="nav-link link-exp underline-transition" href="{% url 'profile' %}">My Profile</a>
                             </li>
                             <li class="nav-item user-link-btm">
-                                <a class="nav-link link-exp underline-transition" href="{% url 'profile' %}">My Profile</a>
+                                <a class="nav-link link-exp underline-transition" href="{% url 'account_logout' %}">Logout</a>
                             </li>
                         {% else %}
                             <li class="nav-item user-link-top">

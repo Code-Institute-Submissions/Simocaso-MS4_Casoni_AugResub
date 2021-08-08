@@ -35,17 +35,16 @@
                     <!-- membership detail image -->
                     <div class="col-12 col-md-5 col-lg-6">
                         <div class="rounded div-img">
-                            <a href="{{ membership.image.url }}" target="_blank" class="mx-auto">  
-                                {% if membership.image %}
-                                    <a href="{{ membership.image.url }}" target="_blank">
-                                        <img class="card-img-top img-fluid rounded" src="{{ membership.image.url }}" alt="{{ membership.name }}">
-                                    </a>
-                                    {% else %}
-                                    <a href="">
-                                        <img class="card-img-top img-fluid" src="{{MEDIA_URL }}noimage.png" alt="{{ membership.name }}">
-                                    </a>
-                                {% endif %}
-                            </a>
+                            {% if membership.image %}
+                                <a href="{{ membership.image.url }}" target="_blank">
+                                    <img class="card-img-top img-fluid rounded" src="{{ membership.image.url }}"
+                                    alt="{{ membership.name }}" target="_blank" class="mx-auto">
+                                </a>
+                            {% else %}
+                                <a href="">
+                                    <img class="card-img-top img-fluid" src="{{MEDIA_URL }}no-image.png" alt="{{ membership.name }}">
+                                </a>
+                            {% endif %}
                         </div>              
                     </div>
 
