@@ -9,6 +9,7 @@ import json
 import stripe
 
 # From Stripe's documentation and Code Institute's Boutique Ado Project
+# stripe's docs. https://stripe.com/docs/webhooks/signatures
 
 
 @require_POST
