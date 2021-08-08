@@ -68,7 +68,7 @@
             <!-- checkout form -->
             <div class="col-12 col-lg-6 mt-3">
                 <p class="text-muted">Please fill out this form below to complete your order:</p>
-                <form action="{% url 'checkout' %}" method="POST" id="checkout-form">
+                <form action="{% url 'checkout' %}" method="POST" id="payment-form">
                     {% csrf_token %}
                     <fieldset class="rounded px-3 mb-2 mb-md-4">
                         <legend class="fieldset-label w-auto small text-black px-2">Your details:</legend>

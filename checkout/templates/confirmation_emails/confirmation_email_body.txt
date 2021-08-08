@@ -1,0 +1,21 @@
+Hello {{ order.full_name }}
+
+Thank you for your recent order with Moti Gym. Here is your order confirmation:
+
+Order Number: {{ order.order_number }}
+Order Date: {{ order.date }}
+
+Order Total: €{{ order.order_total }}
+Delivery: €{{ order.delivery_cost }}
+Grand Total: €{{ order.final_total }}
+
+Your order will be shipped to {{ order.street_address1 }}, {{ order.town_or_city }}, {{ order.post_code }}.
+
+The number we have on file for you is {{ order.phone_number }}. This is the number that we will contact you on if there are any issues or a delay to delivery.
+
+PLease feel free to contact us at {{ contact_email }} if you have any questions.
+
+Thank you for your order!
+
+Regards,
+The Moti gym Staff
