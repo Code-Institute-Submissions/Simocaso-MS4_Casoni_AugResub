@@ -5,35 +5,31 @@ from django.dispatch import receiver
 
 from django_countries.fields import CountryField
 
-"""
-Based on user profile model from Code Institue's Boutique Ado project
-"""
-
 
 class UserProfile(models.Model):
     """
-    A model to enable user profiles to be created and to
-    save delivery details and order history
+    A user profile model for maintaining default
+    delivery information and order history
     """
+    #  'user' specifies that each user can only have one profile and
+    # each profile can only have one user
     user = models.OneToOneField(User, on_delete=models.CASCADE)
-    default_full_name = models.CharField(
-        max_length=50, null=True, blank=True)
-    default_email = models.EmailField(
-        max_length=80, null=True, blank=True)
-    default_phone_number = models.CharField(
-        max_length=20, null=True, blank=True)
-    default_street_address1 = models.CharField(
-        max_length=80, null=True, blank=True)
-    default_street_address2 = models.CharField(
-        max_length=80, null=True, blank=True)
-    default_town_or_city = models.CharField(
-        max_length=40, null=True, blank=True)
-    default_county = models.CharField(
-        max_length=80, null=True, blank=True)
-    default_country = CountryField(
-        blank_label='Country', null=True, blank=True)
-    default_postcode = models.CharField(
-        max_length=20, null=True, blank=True)
+    #  remaining fields taken from order model with default_ added to beginning
+    #  null & blank = True so that they may all be optional
+    default_phone_number = models.CharField(max_length=20,
+                                            null=True, blank=True)
+    default_street_address1 = models.CharField(max_length=80,
+                                               null=True, blank=True)
+    default_street_address2 = models.CharField(max_length=80,
+                                               null=True, blank=True)
+    default_town_or_city = models.CharField(max_length=40,
+                                            null=True, blank=True)
+    default_county = models.CharField(max_length=80,
+                                      null=True, blank=True)
+    default_postcode = models.CharField(max_length=20,
+                                        null=True, blank=True)
+    default_country = CountryField(blank_label='Country',
+                                   null=True, blank=True)
 
     def __str__(self):
         return self.user.username
