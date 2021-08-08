@@ -12,7 +12,7 @@ urlpatterns = [
         views.checkout_success,
         name='checkout_success'),
     path(
-        'cache_checkout_data/<order_number>',
+        'cache_checkout_data/',
         views.cache_checkout_data,
         name='cache_checkout_data'),
     path(
