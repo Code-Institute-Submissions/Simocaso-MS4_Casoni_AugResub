@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 
 import os
 from pathlib import Path
+import dj_database_url
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -50,8 +51,6 @@ INSTALLED_APPS = [
     'checkout',
     'django_countries',
     'profiles',
-
-    # Miscellaneous apps
     'crispy_forms',
 ]
 
@@ -125,11 +124,15 @@ WSGI_APPLICATION = 'motigym.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
+
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
+    'default': dj_database_url.parse('postgres://kehcarqhwjyhjr:1dbc711221c288664432c360c7fe3d13b678ab0199aa031bd53fa73afab1708d@ec2-54-74-60-70.eu-west-1.compute.amazonaws.com:5432/d6j2v93ejvhc7n')
 }
 
 
