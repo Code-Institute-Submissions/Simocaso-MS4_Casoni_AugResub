@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+
+<div class="container-fluid row g-0 text-dark ">
+    <div class="rounded mt-2 mt-sm-5 col-10 offset-1 bg-light p-4">        
+        <!-- product management header -->
+        <div class="row">
+            <div class="col-12 col-md-6">
+                <h2 class="mb4">Product management:</h2>
+                <h4 class="text-muted" >Add a product:</h4>
+            </div>
+        </div>
+        <hr class="w-100 mb-1">
+
+        <div class="row">
+            <div class="col-12 col-lg-6">
+                <form method = "POST" action="{% url 'add_product' %}" class="form mb-2" enctype = "multipart/form-data">
+                    {% csrf_token %}
+                    {% for field in form %}
+                        {% if field.name != 'image' %}
+                            {{ field | as_crispy_field }}
+                        {% else %}
+                            {{ field }}
+                        {% endif %}
+                    {% endfor %}
+                    <div class="text-end mt-3">
+                        <a class = "btn btn-dark" href="{% url 'products' %}">Cancel</a>
+                        <button class = "btn btn-info" type="submit">Add product</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+   </div>
+</div>
+
+
+{% endblock %}
+
