@@ -60,6 +60,8 @@ class StripeWH_Handler:
                     street_address2__iexact=shipping_details.address.line2,
                     county__iexact=shipping_details.address.state,
                     final_total=final_total,
+                    original_bag=bag,
+                    stripe_pid=pid,
                 )
                 order_exists = True
                 break
@@ -76,7 +78,6 @@ class StripeWH_Handler:
             try:
                 order = Order.objects.create(
                     full_name=shipping_details.name,
-                    user_profile=profile,
                     email=billing_details.email,
                     phone_number=shipping_details.phone,
                     country=shipping_details.address.country,
