@@ -7,7 +7,7 @@ from .forms import UserProfileForm
 from checkout.models import Order
 
 
-# @login_required
+@login_required
 def profile(request):
     """ Display the user's profile. """
     profile = get_object_or_404(UserProfile, user=request.user)
@@ -35,7 +35,7 @@ def profile(request):
     return render(request, template, context)
 
 
-# @login_required
+@login_required
 def order_history(request, order_number):
     order = get_object_or_404(Order, order_number=order_number)
 
