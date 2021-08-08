@@ -191,7 +191,7 @@ transition: 0.4s;
     position: fixed;
     top: 75px;
     right: 10px;
-    z-index: 99999999999;
+    z-index: 99999;
 }
 
 .custom-toast{
