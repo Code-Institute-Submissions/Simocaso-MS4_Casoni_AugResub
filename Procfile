@@ -1,1 +1,1 @@
-web: gunicorn motigym.wsgi:application
+web: gunicorn moti-gym.wsgi:application
