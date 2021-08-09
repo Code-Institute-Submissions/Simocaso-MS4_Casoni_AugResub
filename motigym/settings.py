@@ -27,7 +27,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY', '')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = 'DEVELOPMENTE' in os.environ
 
-ALLOWED_HOSTS = ['moti-gym.herokuapp.com', 'localhost']
+ALLOWED_HOSTS = ['https://moti-gym.herokuapp.com/', 'localhost']
 
 
 # Application definition
@@ -125,17 +125,21 @@ WSGI_APPLICATION = 'motigym.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
-if 'DATABASE_URL' in os.environ:
-    DATABASES = {
-        'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
-    }
-else:
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.sqlite3',
-            'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-        }
-    }
+# if 'DATABASE_URL' in os.environ:
+#     DATABASES = {
+#         'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
+#     }
+# else:
+#     DATABASES = {
+#         'default': {
+#             'ENGINE': 'django.db.backends.sqlite3',
+#             'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+#         }
+#     }
+
+DATABASES = {
+    'default': dj_database_url.parse('postgres://kehcarqhwjyhjr:1dbc711221c288664432c360c7fe3d13b678ab0199aa031bd53fa73afab1708d@ec2-54-74-60-70.eu-west-1.compute.amazonaws.com:5432/d6j2v93ejvhc7n')
+}
 
 
 # Password validation
