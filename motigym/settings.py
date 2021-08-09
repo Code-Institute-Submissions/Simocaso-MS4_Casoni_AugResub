@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-$77jo%4g5l(ri_&*6_barb_9h@!q&7wc%)zy^n5!t@oslgljl+
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['moti-gym.herokuapp.com', 'localhost']
 
 
 # Application definition
