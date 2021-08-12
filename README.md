@@ -102,6 +102,7 @@ Databases have been setup in models.py of the following apps:
 - Infos
 - Orders
 - Checkout
+- Profile
 
 An example of the Product's database can be found below:
 
@@ -114,26 +115,21 @@ An example of the Product's database can be found below:
  image_url | URLField | max_length=1024, null=True, blank=True
  image | ImageField | null=True, blank=True
 
-
-More about the Django database models can be found [here](https://docs.djangoproject.com/en/3.1/topics/db/models/#field-options).
+#### More about the Django database models can be found [here](https://docs.djangoproject.com/en/3.1/topics/db/models/#field-options).
 ---
 
 ## Frameworks, Libraries & Programmes Used
 
 1. [Bootstrap](https://getbootstrap.com/) 
-2. [Google Fonts:](https://fonts.google.com/) 
-3. [Font Awesome:](https://fontawesome.com/) 
-4. [jQuery:](https://jquery.com/) 
-5. [Git:](https://git-scm.com/) 
-6. [GitHub:](https://github.com/) 
-7. [Heroku:](https://heroku.com) 
-    * Heroku was used to host the deployed site
-8. [AWS:](https://aws.amazon.com/)
-    * AWS was used to host the static files
+2. [Google Fonts](https://fonts.google.com/) 
+3. [Font Awesome](https://fontawesome.com/) 
+4. [jQuery](https://jquery.com/) 
+5. [Gitpod](https://www.gitpod.io/) 
+6. [GitHub](https://github.com/) 
+7. [Heroku](https://heroku.com) 
+8. [AWS](https://aws.amazon.com/)
 9. [Stripe](https://stripe.com/gb)
-    * Stripe was used for the payments on the checkout page
 10. [Django](https://www.djangoproject.com/)
-    * The Django framework was used across the site
 11. [temp-mail.org](https://temp-mail.org/en/)
 12. Languages used
     * HTML
