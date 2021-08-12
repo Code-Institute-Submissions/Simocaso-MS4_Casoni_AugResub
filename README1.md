@@ -1,3 +1,4 @@
+starting read me
 1. installing django
 pip3 install django
 
