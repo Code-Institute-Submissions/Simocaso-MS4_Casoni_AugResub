@@ -56,4 +56,24 @@ The images used throughout the site were taken from https://unsplash.com/
 ---
 ### Wireframes
 
-The wireframes for the site were created in balsamiq and uploaded as a pdf. They can be found as a pdf file [here.](https://github.com/Simocaso/MS4_Casoni/blob/master/wireframes)
+Wireframes for this site have been drawn with pen and paper. They're very simple, but they gave me a clear idea of the site structure I wanted to elaborate:
+* ![wireframe-1](documentation/wireframes/wireframe-1.png)
+* ![wireframe-2](documentation/wireframes/wireframe-2.png)
+---
+
+## Features
+
+### Site
+
+1. The site is responsive across all screen sizes. The layout of the pages change depending on the size of screen. This has created a tidy and clean look on all screens.
+2. Within the site, especially in the memberships, shop page and checkout page, users will be able to see nice animations, in relation to their actions.
+
+### Users
+
+1. People can use the site anonymously and still look at the shop, memberships, locations and ask for support/information.
+2. Additionally, if a user is registered, their delivery info will be retained for future purchases; plus, their profile will store details of  their previous orders. 
+3. The store owner will be logged in as a superuser, with the ability to add, edit, and delete products in the shop. 
+4. The registration page enables new users to register for an account. From this page, existing customer can also go to the log in page.
+5. The log in page enables a user to log in to their account to update their details or access their purchase history. Once logged in, users can checkout easier as their delivery information will be saved and autofilled into the checkout. If a user does not have an account, then there is a link to take them to the registration page.
+6. During every checkout, registration, password reset, login verification (etc.), users will be notified with a customized email.
+7. 
