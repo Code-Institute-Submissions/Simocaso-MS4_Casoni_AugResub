@@ -251,3 +251,118 @@ In heroku go to settings, reveal config vars and enter the following:
     Click on Open App from the app page within Heroku to launch your deployed site.
 
 ---
+
+## **Setting up an S3 bucket**
+
+1. Create an Amazon AWS account**
+2. Search for S3 and create a new bucket
+    * Allow public access
+
+3. Under Properties > Static website hosting
+    * Enable
+    * Index.html as index document
+    * Save
+
+4. Under Permissions > CORS use:
+
+        [
+        {
+            "AllowedHeaders": [
+                "Authorization"
+            ],
+            "AllowedMethods": [
+                "GET"
+            ],
+            "AllowedOrigins": [
+                "*"
+            ],
+            "ExposeHeaders": []
+        }
+        ]
+
+5. Under Permissions > Bucket Policy:
+    * Generate Bucket Policy and save Bucket ARN
+    * Type of Policy is S3 Bucket Policy
+    * Enter * for Principal
+    * Enter ARN previously copied
+    * Add Statement
+    * Generate Policy
+    * Copy Policy JSON Document
+    * Paste policy into the Edit Bucket policy on the previous tab
+    * Save your changes
+
+6. Under Access Control List (ACL):
+    * Under Everyone (public access), tick List
+    * Acknowledge that everyone will be able to access the Bucket
+    * Save changes
+
+
+## **Setting up AWS IAM (Identity and Access Management)**
+
+1. From the IAM dashboard within AWS, click User Groups:
+    * Create new group and name it e.g. manage-motigym
+    * Click through but do not add a policy
+    * Create Group
+
+2. Select Policies:
+    * Create the policy
+    * Under JSON tab, click Import managed policy
+    * Select AmazongS3FullAccess
+    * Edit the resource including the Bucket ARN from the Bucket Policy:
+
+			"Resource": [
+			                "arn:aws:s3:::motigym",
+			                "arn:aws:s3:::motigym/*"
+            ]
+    * Click next step > review policy
+    * Name the policy e.g motigym-policy
+    * Create the policy
+
+3. Return to User Groups and select the group created earlier
+    * Under Permissions > Add permissions, select Attach Policies and select the one you have just created
+    * Add permissions
+
+4. Under Users:
+    * Choose a user name e.g. motigym-staticfiles-user
+    * Access type is Programmatic access
+    * Click Next
+    * Add user to the Group you have just created
+    * Click Next and Create User
+
+5. Download the .csv which contains the access key and secret access key. This cannot be downloaded again so ensure that it is saved securely
+
+## **Commecting Django to S3** 
+1. Install boto3 and django-storages
+
+        * pip3 install boto3
+        * pip3 install django-storages
+        * pip3 freeze > requirements.txt
+
+2. In Heroku CVARS, under settings, add the following values from the .csv file that was downloaded in the previous step.
+
+        * AWS_ACCESS_KEY_ID
+        * AWS_SECRET_ACCESS_KEY
+
+3. Delete the DISABLE_COLLECTSTATIC variable from your CVARS in Heroku, and deploy your Heroku app
+
+4. Once the S3 bucket is set up, create a new folder called media (at the same level as the static folder). Any media files required by your site can be uploaded here. Ensure they are pulicly accessible under permissions within the S3 bucket.
+
+---
+
+## Credits
+
+### Code
+
+* The code that formed the basis of the project is based on the Boutique Ado Walkthrough project on the LMS. 
+
+
+### Acknowledgements
+
+Thanks to 
+
+- Gerard McBride, my mentor
+- The all code institute Team; especially to Alex, for his superb support and his comprehension 
+- the slackoverflow community
+- [Bootstrap](https://startbootstrap.com/), and the whole bootstrap team
+- [Myself](https://github.com/Simocaso), and my genetic and passion for coding;
+as I was able to code 3 days in a row without sleeping
