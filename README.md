@@ -5,7 +5,7 @@
 # MOTIGYM
 ## A Milestone 4 Project by Simone Casoni
 
-[View the live project](https://motigym.herokuapp.com/info/)
+[View the live project](https://motigym.herokuapp.com/)
 
 
 This website was designed to be a e-commerce/info site for a group of local gyms in Dublin (Motigym). Please, consider this website for educational purposes only.
