@@ -26,7 +26,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY', 'test')
 # SECRET_KEY = 'd5@si^2xce(uerc&q#2ohm%0=ejk5_e%7v)y!hj-*1%7+mf7pc'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = 'DEVELOPMENT' in os.environ
 
 ALLOWED_HOSTS = ['motigym.herokuapp.com', 'localhost']
 
