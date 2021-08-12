@@ -216,7 +216,7 @@ A different endpoint will need to be created for both the local and deployed sit
 
 **9. Temporarily disable Heroku's static file collection**
 
-    heroku config:set DISABLE_COLLECTSTATIC=1 --app from-field-to-frame
+    heroku config:set DISABLE_COLLECTSTATIC=1 --app motigym
 
 **10. Add the hostname of your Heroku app to settings.py**
     ALLOWED_HOSTS = ['<APP-NAME>.herokuapp.com', 'localhost']
