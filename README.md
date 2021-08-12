@@ -91,6 +91,32 @@ The wireframe's folder can be found here.
 4. Ability to directly subscribe to an automatic monthly membership payment
 
 ---
+## Information architecture
+
+The initial database used for this project is sqlite3. During production the database was changed at the deployment stage to PostgreSQL with Heroku as add-on.
+
+Databases have been setup in models.py of the following apps:
+
+- Products
+- Memberships
+- Infos
+- Orders
+- Checkout
+
+An example of the Product's database can be found below:
+
+| **Name** | **Field Type** | **Validation** |
+--- | --- | --- 
+ name | CharField | max_length=200
+ description | CharField | max_length=2000
+ price | DecimalField | max_digits=6, decimal_places=2
+ has_sizes | BooleanField | default=True, null=True, blank=True
+ image_url | URLField | max_length=1024, null=True, blank=True
+ image | ImageField | null=True, blank=True
+
+
+More about the Django database models can be found [here](https://docs.djangoproject.com/en/3.1/topics/db/models/#field-options).
+---
 
 ## Frameworks, Libraries & Programmes Used
 
@@ -366,3 +392,4 @@ Thanks to
 - [Bootstrap](https://startbootstrap.com/), and the whole bootstrap team
 - [Myself](https://github.com/Simocaso), and my genetic and passion for coding;
 as I was able to code 3 days in a row without sleeping
+- A special friend, who gave me the strength to push myself everyday

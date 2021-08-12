@@ -16,7 +16,7 @@ class UserProfile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     #  remaining fields taken from order model with default_ added to beginning
     #  null & blank = True so that they may all be optional
-    default_phone_number = models.CharField(max_length=20,
+    default_phone_number = models.CharField(max_length=18,
                                             null=True, blank=True)
     default_street_address1 = models.CharField(max_length=80,
                                                null=True, blank=True)
